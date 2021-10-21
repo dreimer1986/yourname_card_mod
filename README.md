@@ -43,24 +43,24 @@ Create when none exist.
 ### <a name="screenshots"></a>Screenshots
 **Home overview**
 <p align="center">
-  <img src="https://i.imgur.com/51mOqfs.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/home1.png">
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/TUYxw0N.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/home2.png">
 </p>
 
 **Dropdown menu black**
 <p align="center">
-  <img src="https://i.imgur.com/Kqi9iaL.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/dropdown.png">
 </p>
 
 **Table**
 <p align="center">
-  <img src="https://i.imgur.com/I6UdSES.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/table.png">
 </p>
 
 **Mobile**
 <p align="center">
-  <img src="https://i.imgur.com/cw0STX5.jpg">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/mobile.png">
 </p>
