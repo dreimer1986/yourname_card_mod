@@ -1,4 +1,4 @@
-# Your Name.
+# Your Name Card-Mod Edition.
 Home Assistant theme - A dark, electric blue theme that reminds (me) the movie Your Name.   
 
 * [Prerequisite](#prerequisite)
