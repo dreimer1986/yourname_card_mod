@@ -1,4 +1,5 @@
 yourname:
+  card-mod-theme: "yourname"
   ### Header Height ###
   header-height: 44px
   ### Main Interface Colors ###
@@ -56,3 +57,51 @@ yourname:
   ### Switches ###
   switch-unchecked-button-color: var(--divider-color)
   switch-unchecked-track-color: var(--divider-color)
+  weather-icon-clear-night: url("/local/icons/clear-night.svg")
+  weather-icon-cloudy: url("/local/icons/cloudy.svg")
+  weather-icon-fog: url("/local/icons/fog.svg")
+  weather-icon-lightning: url("/local/icons/lightning.svg")
+  weather-icon-lightning-rainy: url("/local/icons/lightning-rainy.svg")
+  weather-icon-partlycloudy: url("/local/icons/partlycloudy.svg")
+  weather-icon-pouring: url("/local/icons/pouring.svg")
+  weather-icon-rainy: url("/local/icons/rainy.svg")
+  weather-icon-hail: url("/local/icons/hail.svg")
+  weather-icon-snowy: url("/local/icons/snowy.svg")
+  weather-icon-snowy-rainy: url("/local/icons/snowy-rainy.svg")
+  weather-icon-sunny: url("/local/icons/sunny.svg")
+  weather-icon-windy: url("/local/icons/windy.svg")
+  weather-icon-windy-variant: url("/local/icons/windy-variant.svg")
+  weather-icon-exceptional: url("/local/icons/exceptional.svg")
+
+  card-mod-root: |
+    ha-app-layout {
+      background: var(--lovelace-background) !important;
+      background-size: cover !important;
+    }
+    app-header {
+      background: var(--ha-card-background) !important;
+    }
+    app-toolbar {
+      background: none !important;
+    }
+  card-mod-badge-yaml: |
+    ha-state-label-badge $ ha-label-badge $: |
+      .label-badge {
+        background: var(--ha-card-background) !important;
+      }
+  card-mod-sidebar: |
+    :host {
+      background: var(--lovelace-background) !important;
+    }
+    :host::before {
+      background: var(--lovelace-background) !important;
+    }
+    div.menu {
+      background: var(--ha-card-background) !important;
+    }
+    paper-icon-item[role=option], paper-icon-item[aria-role=option] {
+      background: var(--ha-card-background) !important;
+    }
+    .iron-selected paper-icon-item {
+      background: var(--ha-card-background) !important;
+    }
