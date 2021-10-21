@@ -22,13 +22,13 @@ Create when none exist.
 
 ### <a name="hacs_installation"></a>HACS installation
 1. Open the Community Store (HACS)
-2. Search for `Your Name`
+2. Search for `Your Name. Card-Mod Edition`
 3. Install it
 4. Restart Home Assistant
 5. Possible bug(?)
 
 ### <a name="manual_installation"></a>Manual installation
-1. Copy the file `yourname.yaml` into your Home Assistant themes folder
+1. Copy the file `yourname_cardmod.yaml` into your Home Assistant themes folder
 2. Copy (or create) the `backgrounds` folder inside `www/` and copy the background image `yourname.jpg` inside `backgrounds`
 3. Restart Home Assistant
 
