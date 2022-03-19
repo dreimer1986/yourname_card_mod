@@ -7,6 +7,7 @@ yourname_cardmod:
   app-header-background-color: "#141A32"
   card-background-color: "rgba(0, 0, 0, 0.5)"
   primary-color: "#007AFF"
+  disabled-primary-color: "#007AFF54"
   light-primary-color: "#4DA3FF"
   primary-background-color: var(--app-header-background-color)
   secondary-background-color: "#000000"
@@ -72,7 +73,12 @@ yourname_cardmod:
   weather-icon-windy: url("/local/icons/windy.svg")
   weather-icon-windy-variant: url("/local/icons/windy-variant.svg")
   weather-icon-exceptional: url("/local/icons/exceptional.svg")
-
+  input-fill-color: "rgba(0, 0, 0, 0.5)"
+  input-label-ink-color: "var(--primary-color)"
+  input-ink-color: "var(--primary-color)"
+  input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
+  input-disabled-ink-color: "var(--disabled-primary-color)"
+  
   card-mod-root: |
     ha-app-layout {
       background: var(--lovelace-background) !important;
@@ -84,11 +90,14 @@ yourname_cardmod:
     app-toolbar {
       background: none !important;
     }
-  card-mod-badge-yaml: |
+    card-mod-badge-yaml: |
     ha-state-label-badge $ ha-label-badge $: |
       .label-badge {
         background: var(--ha-card-background) !important;
       }
+    tips {
+        display: none !important;
+    }
   card-mod-sidebar: |
     :host {
       background: var(--lovelace-background) !important;
