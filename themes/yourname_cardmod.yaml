@@ -12,7 +12,7 @@ yourname_cardmod:
   primary-background-color: var(--app-header-background-color)
   secondary-background-color: "#000000"
   divider-color: "#3B4C8B"
-  markdown-code-background-color: "#1E2747"
+  markdown-code-background-color: "rgba(30, 39, 71, 0.5)"
   ### Text ###
   primary-text-color: "#FFFFFF"
   secondary-text-color: var(--light-primary-color)
@@ -25,6 +25,7 @@ yourname_cardmod:
   sidebar-selected-icon-color: var(--light-primary-color)
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
   sidebar-background-color: var(--primary-background-color)
+  app-drawer-width: 0
   ### States and Badges ###
   state-icon-color: var(--primary-color)
   state-icon-active-color: "#FBCD41"
@@ -58,6 +59,7 @@ yourname_cardmod:
   ### Switches ###
   switch-unchecked-button-color: var(--divider-color)
   switch-unchecked-track-color: var(--divider-color)
+  ### Weather Icons ###
   weather-icon-clear-night: url("/local/icons/clear-night.svg")
   weather-icon-cloudy: url("/local/icons/cloudy.svg")
   weather-icon-fog: url("/local/icons/fog.svg")
@@ -73,6 +75,7 @@ yourname_cardmod:
   weather-icon-windy: url("/local/icons/windy.svg")
   weather-icon-windy-variant: url("/local/icons/windy-variant.svg")
   weather-icon-exceptional: url("/local/icons/exceptional.svg")
+  ### Inputs ###
   input-fill-color: "rgba(0, 0, 0, 0.5)"
   input-label-ink-color: "var(--primary-color)"
   input-ink-color: "var(--primary-color)"
@@ -81,8 +84,7 @@ yourname_cardmod:
   
   card-mod-root: |
     ha-app-layout {
-      background: var(--lovelace-background) !important;
-      background-size: cover !important;
+      background-size: cover;
     }
     app-header {
       background: var(--ha-card-background) !important;
@@ -94,16 +96,17 @@ yourname_cardmod:
     ha-state-label-badge $ ha-label-badge $: |
       .label-badge {
         background: var(--ha-card-background) !important;
-      }
-    tips {
-        display: none !important;
     }
+
   card-mod-sidebar: |
     :host {
-      background: var(--lovelace-background) !important;
+      background: rgba(0, 0, 0, 0.5) !important;
+    }
+    :host([persistent]) {
+      width: 0 !important;
     }
     :host::before {
-      background: var(--lovelace-background) !important;
+      background: rgba(0, 0, 0, 0.5) !important;
     }
     div.menu {
       background: var(--ha-card-background) !important;
