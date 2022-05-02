@@ -83,30 +83,16 @@ yourname_cardmod:
   input-disabled-ink-color: var(--disabled-primary-color)
   
   card-mod-root: |
-    ha-app-layout {
-      background-size: cover;
-    }
     app-header {
       background: var(--ha-card-background) !important;
     }
     app-toolbar {
       background: none !important;
     }
-    card-mod-badge-yaml: |
-    ha-state-label-badge $ ha-label-badge $: |
-      .label-badge {
-        background: var(--ha-card-background) !important;
-    }
 
   card-mod-sidebar: |
     :host {
-      background: rgba(0, 0, 0, 0.5) !important;
-    }
-    :host([persistent]) {
-      width: 0 !important;
-    }
-    :host::before {
-      background: rgba(0, 0, 0, 0.5) !important;
+      background: var(--ha-card-background) !important;
     }
     div.menu {
       background: var(--ha-card-background) !important;
