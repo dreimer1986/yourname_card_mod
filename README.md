@@ -5,6 +5,8 @@ WARNING! card-mod and for the real deal Lovelace Animated Background custom addi
 * [Prerequisite](#prerequisite)
 * [HACS installation](#hacs_installation)
 * [Manual installation](#manual_installation)
+* [Activate transparent Sidebar](#activate_transparent_sidebar)
+* [Activate animated Backgrounds](#activate_animations)
 * [Enable the theme](#enable_the_theme)
 * [Bug](#bug)
 * [Screenshots](#screenshots)
@@ -42,7 +44,7 @@ Create it when none exists yet.
 
 Put this on the very beginning of your Dashboard RAW configurator:
 
-``
+```
 animated_background:
   enabled: true
   debug: true
@@ -51,7 +53,7 @@ animated_background:
     - /local/animated_backgrounds/2.mp4
     - /local/animated_backgrounds/3.mp4
     - /local/animated_backgrounds/4.mp4
-``
+```
 
 I did not yet add animations in my repo, because I have no clue if that is legal, but you can do by yourself then.
 Create the `animated_backgrounds` folder inside `www/` and copy the MP4 files you wanna have as background in there.
