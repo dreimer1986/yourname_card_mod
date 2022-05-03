@@ -70,11 +70,7 @@ Name them 1.mp4, 2.mp4, 3.mp4 and 4.mp4.
 ### <a name="screenshots"></a>Screenshots
 **Home overview**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/home1.png">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/home2.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/animation.webp">
 </p>
 
 **Dropdown menu black**
