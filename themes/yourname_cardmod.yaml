@@ -87,7 +87,7 @@ yourname_cardmod:
       background: var(--ha-card-background) !important;
     }
     app-toolbar {
-      background: none !important;
+      background: transparent !important;
     }
 
   card-mod-sidebar: |
@@ -95,7 +95,7 @@ yourname_cardmod:
       background: var(--ha-card-background) !important;
     }
     div.menu {
-      background: var(--ha-card-background) !important;
+      background: transparent !important;
     }
     paper-icon-item[role=option], paper-icon-item[aria-role=option] {
       background: var(--ha-card-background) !important;
