@@ -1,4 +1,4 @@
-# Your Name Card-Mod & Animated Background Edition.
+# Your Name. - Card-Mod & Animated Background Edition.
 Home Assistant theme - A dark, electric blue theme that reminds (me) of the movie Your Name.
 WARNING! card-mod and for the real deal Lovelace Animated Background custom addins are mandatory!
 
