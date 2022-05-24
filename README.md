@@ -47,6 +47,8 @@ Create it when none exists yet.
 
 ### <a name="activate_animations"></a>Activate animated Backgrounds
 
+!! This section is needed regardless of the installation method used !!
+
 Put this on the very beginning of your Dashboard RAW configurator:
 
 ```
@@ -72,7 +74,7 @@ Name them 1.mp4, 2.mp4, 3.mp4 and 4.mp4.
 
 - Transparency set for cards can have an undesired effect on other Home Assistant resources. I haven't found a 100% fix for these minimal flaws.
 
-- The transparent Sidebar CSS can not be installed by HACS, too. This part has to be done when using HACS or doing things manually, if you want the transparent Sidebar.
+- The transparent Sidebar CSS can not be installed by HACS, too. Same goes for the Animation activation part! These parts have to be done when using HACS or doing things manually, if you want the transparent Sidebar and animated backgrounds.
 
 ### <a name="screenshots"></a>Screenshots
 **Home overview**
