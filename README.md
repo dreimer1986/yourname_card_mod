@@ -24,18 +24,23 @@ Check if the **themes** folder exists in **config** folder.
 Create it when none exists yet.
 
 ### <a name="hacs_installation"></a>HACS installation
+
 1. Open the Community Store (HACS)
 2. Search for `Your Name. Card-Mod & Animated Background Edition`
 3. Install it
 4. Restart Home Assistant
-5. Possible bugs(?)
+5. Possible [Bug](#bug)
 
 ### <a name="manual_installation"></a>Manual installation
+
 1. Copy the file `yourname_cardmod.yaml` into your Home Assistant themes folder
 2. Copy (or create) the `backgrounds` folder inside `www/` and copy the background image `yourname.jpg` inside `backgrounds`
 3. Restart Home Assistant
 
 ### <a name="activate_transparent_sidebar"></a>Activate transparent Sidebar
+
+!! This section is needed regardless of the installation method used !!
+
 1. styles.js must be in `www/` folder
 2. Go the the Dashboard Ressources Settings
 3. Add a new JavaScript-Module and type in: `/local/styles.js?v=1`
@@ -66,6 +71,8 @@ Name them 1.mp4, 2.mp4, 3.mp4 and 4.mp4.
 - When installing with HACS the `backgrounds` folder is not created and with it also the background image is not copied. The theme is pointing to a non-existing location and after restarting Home Assistant you may not see the background image. If this happens, check the [Manual installation](#manual_installation) at step #2 and restart Home Assistant once again.
 
 - Transparency set for cards can have an undesired effect on other Home Assistant resources. I haven't found a 100% fix for these minimal flaws.
+
+- The transparent Sidebar CSS can not be installed by HACS, too. This part has to be done when using HACS or doing things manually, if you want the transparent Sidebar.
 
 ### <a name="screenshots"></a>Screenshots
 **Home overview**
