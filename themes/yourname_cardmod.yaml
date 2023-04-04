@@ -83,10 +83,10 @@ yourname_cardmod:
   input-disabled-ink-color: var(--disabled-primary-color)
   
   card-mod-root: |
-    app-header {
+    app-header, div.header {
       background: var(--ha-card-background) !important;
     }
-    app-toolbar {
+    app-toolbar, div.toolbar {
       background: transparent !important;
     }
 
