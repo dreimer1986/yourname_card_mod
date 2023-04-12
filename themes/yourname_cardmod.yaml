@@ -91,8 +91,8 @@ yourname_cardmod:
     }
 
   card-mod-sidebar: |
-    :host {
-      background: var(--ha-card-background) !important;
+    :host, . {
+      background: transparent !important;
     }
     div.menu {
       background: transparent !important;
