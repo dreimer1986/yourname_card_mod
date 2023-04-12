@@ -5,7 +5,8 @@ WARNING! card-mod custom addin is mandatory!
 * [Prerequisite](#prerequisite)
 * [HACS installation](#hacs_installation)
 * [Manual installation](#manual_installation)
-* [Activate transparent Sidebar](#activate_transparent_sidebar)
+* [Activate transparent Sidebar and animated background support](#activate_transparent_sidebar)
+* [Activate animated Backgrounds](#activate_animations)
 * [Enable the theme](#enable_the_theme)
 * [Bug](#bug)
 * [Screenshots](#screenshots)
@@ -36,7 +37,7 @@ Create it when none exists yet.
 2. Copy (or create) the `backgrounds` folder inside `www/` and copy the background image `yourname.jpg` inside `backgrounds`
 3. Restart Home Assistant
 
-### <a name="activate_transparent_sidebar"></a>Activate transparent Sidebar
+### <a name="activate_transparent_sidebar"></a>Activate transparent Sidebar and animated Background support
 
 !! This section is needed regardless of the installation method used !!
 
