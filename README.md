@@ -1,12 +1,11 @@
 # Your Name. - Card-Mod & Animated Background Edition.
 Home Assistant theme - A dark, electric blue theme that reminds (me) of the movie Your Name.
-WARNING! card-mod and for the real deal Lovelace Animated Background custom addins are mandatory!
+WARNING! card-mod custom addin is mandatory!
 
 * [Prerequisite](#prerequisite)
 * [HACS installation](#hacs_installation)
 * [Manual installation](#manual_installation)
 * [Activate transparent Sidebar](#activate_transparent_sidebar)
-* [Activate animated Backgrounds](#activate_animations)
 * [Enable the theme](#enable_the_theme)
 * [Bug](#bug)
 * [Screenshots](#screenshots)
@@ -41,30 +40,18 @@ Create it when none exists yet.
 
 !! This section is needed regardless of the installation method used !!
 
-1. styles.js must be in `www/` folder
+1. styles.js and videoBackground.css must be in `www/` folder
 2. Go the the Dashboard Ressources Settings
 3. Add a new JavaScript-Module and type in: `/local/styles.js?v=1`
+4. Add a new Stylesheet and type in: `/local/videoBackground.css`
 
 ### <a name="activate_animations"></a>Activate animated Backgrounds
 
 !! This section is needed regardless of the installation method used !!
 
-Put this on the very beginning of your Dashboard RAW configurator:
-
-```
-animated_background:
-  enabled: true
-  debug: true
-  default_url:
-    - /local/animated_backgrounds/1.mp4
-    - /local/animated_backgrounds/2.mp4
-    - /local/animated_backgrounds/3.mp4
-    - /local/animated_backgrounds/4.mp4
-```
-
 I did not yet add animations in my repo, because I have no clue if that is legal, but you can do by yourself then.
 Create the `animated_backgrounds` folder inside `www/` and copy the MP4 files you wanna have as background in there.
-Name them 1.mp4, 2.mp4, 3.mp4 and 4.mp4.
+Name them 1.mp4, 2.mp4, 3.mp4, 4.mp4 etcetc. Open your videoBackground.css and check the max value. Change it to the number of videos you added.
 
 ### <a name="enable_the_theme"></a>Enable the theme
 - Open your **Profile** in Home Assistant and select the theme called **yourname_cardmod**
