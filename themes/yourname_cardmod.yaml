@@ -3,7 +3,7 @@ yourname_cardmod:
   ### Header Height ###
   header-height: 44px
   ### Main Interface Colors ###
-  lovelace-background: 'center / cover no-repeat url("/local/backgrounds/yourname.jpg") fixed'
+  lovelace-background: 'transparent'
   app-header-background-color: "#141A32"
   card-background-color: "rgba(0, 0, 0, 0.5)"
   primary-color: "#007AFF"
