@@ -25,7 +25,6 @@ yourname_cardmod:
   sidebar-selected-icon-color: var(--light-primary-color)
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
   sidebar-background-color: var(--app-header-background-color)
-  app-drawer-width: 0
   ### States and Badges ###
   state-icon-color: var(--primary-color)
   state-icon-active-color: "#FBCD41"
