@@ -3,8 +3,8 @@ yourname_cardmod:
   ### Header Height ###
   header-height: 44px
   ### Main Interface Colors ###
-  lovelace-background: 'transparent'
-  app-header-background-color: "#141A32"
+  lovelace-background: "transparent"
+  app-header-background-color: "rgba(20, 26, 50, 0.5)"
   card-background-color: "rgba(0, 0, 0, 0.5)"
   primary-color: "#007AFF"
   disabled-primary-color: "#007AFF54"
@@ -24,7 +24,7 @@ yourname_cardmod:
   sidebar-selected-background-color: var(--primary-background-color)
   sidebar-selected-icon-color: var(--light-primary-color)
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
-  sidebar-background-color: var(--primary-background-color)
+  sidebar-background-color: var(--app-header-background-color)
   app-drawer-width: 0
   ### States and Badges ###
   state-icon-color: var(--primary-color)
@@ -81,25 +81,10 @@ yourname_cardmod:
   input-ink-color: var(--primary-color)
   input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
   input-disabled-ink-color: var(--disabled-primary-color)
-  
-  card-mod-root: |
-    app-header, div.header {
-      background: var(--ha-card-background) !important;
-    }
-    app-toolbar, div.toolbar {
-      background: transparent !important;
-    }
+
+# Sidebar buttons in darker than background of it
 
   card-mod-sidebar: |
-    :host, . {
-      background: transparent !important;
-    }
-    div.menu {
-      background: transparent !important;
-    }
     paper-icon-item[role=option], paper-icon-item[aria-role=option] {
-      background: var(--ha-card-background) !important;
-    }
-    .iron-selected paper-icon-item {
       background: var(--ha-card-background) !important;
     }
