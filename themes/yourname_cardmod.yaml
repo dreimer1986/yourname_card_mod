@@ -80,6 +80,15 @@ yourname_cardmod:
   input-ink-color: var(--primary-color)
   input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
   input-disabled-ink-color: var(--disabled-primary-color)
+  ### Edit Mode transparency ###
+  app-header-edit-background-color: var(--app-header-background-color)
+
+# Two layers are one too much in Edit mode
+
+  card-mod-root: |
+    paper-tabs {
+      background-color: transparent !important;
+    }
 
 # Sidebar buttons in darker than background of it
 
