@@ -30,27 +30,27 @@ async function callWebApi() {
     return result.json();
 }
 
-const weather_ = await callWebApi();
-console.log(weather_.state);
+const weather_ = (await callWebApi()).state;
+console.log(weather_);
 
 // Which file list will it be?
 function giveRightFiles() {
     if (weatherControl_ == true) {
-        if (weather_.state == "clearnight") return filesClearnight;
-        else if (weather_.state == "cloudy") return filesCloudy;
-        else if (weather_.state == "fog") return filesFog;
-        else if (weather_.state == "hail") return filesHail;
-        else if (weather_.state == "lightning") return filesLightning;
-        else if (weather_.state == "lightningrainy") return filesLightningRainy;
-        else if (weather_.state == "partlycloudy") return filesPartlyCloudy;
-        else if (weather_.state == "pouring") return filesPouring;
-        else if (weather_.state == "rainy") return filesRainy;
-        else if (weather_.state == "snowy") return filesSnowy;
-        else if (weather_.state == "snowyrainy") return filesSnowyRainy;
-        else if (weather_.state == "sunny") return filesSunny;
-        else if (weather_.state == "windy") return filesWindy;
-        else if (weather_.state == "windyvariant") return filesWindyVariant;
-        else if (weather_.state == "exceptional") return filesExceptional;
+        if (weather_ == "clearnight") return filesClearnight;
+        else if (weather_ == "cloudy") return filesCloudy;
+        else if (weather_ == "fog") return filesFog;
+        else if (weather_ == "hail") return filesHail;
+        else if (weather_ == "lightning") return filesLightning;
+        else if (weather_ == "lightningrainy") return filesLightningRainy;
+        else if (weather_ == "partlycloudy") return filesPartlyCloudy;
+        else if (weather_ == "pouring") return filesPouring;
+        else if (weather_ == "rainy") return filesRainy;
+        else if (weather_ == "snowy") return filesSnowy;
+        else if (weather_ == "snowyrainy") return filesSnowyRainy;
+        else if (weather_ == "sunny") return filesSunny;
+        else if (weather_ == "windy") return filesWindy;
+        else if (weather_ == "windyvariant") return filesWindyVariant;
+        else if (weather_ == "exceptional") return filesExceptional;
     } else {
         return filesRandom;
     }
@@ -65,7 +65,7 @@ document.querySelector("body > home-assistant").shadowRoot.querySelector("home-a
 // Randomizer
 const i = Math.floor(Math.random()*fileList_.length);
 
-//Create video element
+// Create video element
 const video = document.createElement('video');
 video.autoplay = true;
 video.loop = true;
