@@ -45,13 +45,13 @@ If you look at the script with a fitting editor you can see the starting section
 The long term token is needed to communicate with Home Assistant. Addins have funny helpers for this, scripts seem to be left out there. So we go the lil longer route. To create one, click on your username in Home Assistant and go all the way down to the bottom. There you see the list of long term tokens and can create your own, too. Do so, copy it and put it inside the script here.
 
 **const weatherEntity_:**
-Neded if you want to use the weather depending backgrounds. I chose my default one here. "weather.home" The state of this entity contols the backgrounds that are being used.
+Needed if you want to use the weather depending backgrounds. I chose my default one here. "weather.home" The state of this entity controls the backgrounds that are being used.
 
 **const videoPath_:**
-Path to your videos. I have my whole bunch on my HA hardware, but you can select a URL here, too. For convenience I put the correct one for the flixel.com hosted images used by Villhellm's addin here in commented out form there aswell. Remove the // and put them before the local folder instead. The flixel.com videos are already in the lists we talk about next.  
+Path to your videos. I have my whole bunch on my HA hardware, but you can select a URL here, too. For convenience I put the correct one for the flixel.com hosted images used by Villhellm's addin here in commented out form there aswell. Remove the // and put them before the local folder instead. The flixel.com videos are already in the lists we talk about below.  
 
 **const weatherControl_:**
-In my case if a pure randomizer is needed, set it to false. For weather based randomizer, set it to true.
+If a pure randomizer is needed, set it to false. For weather based randomizer, set it to true.
 
 **const filesWHATEVER:**
 Below that you can find 15 + 1 lists for video names.
@@ -62,7 +62,42 @@ Then there are 15 lists for specific weather types. You can differentiate them j
 
 ### <a name="themes"></a>Modify themes for videos
 
-TBD
+Editing themes to be transparent enough is easy. Open the yaml and look for stuff with background in it's name. For example to get the original yourname theme working I edited these:
+
+**lovelace-background:**
+
+The background image of the theme it is. Of course this is in the way if you wanna play a video there. So you set it to "transparent". 
+
+**app-header-background-color:**
+
+This is the header background color. (The selection bar on the top of the screen). In the case here it was a funny HEX value. "#141A32" The header bar looks better if it's not 100% transparent, thus I converted it to rgb first by using a online converter: https://www.rapidtables.com/convert/color/hex-to-rgb.html
+Now you get a nice CSS value like "rgb(20, 26, 50)". This needs editing for transparency now. Change rgb to rgba and extend the braces with ", 0,5" making it "rgba(20, 26, 50, 0.5)". This keeps the original coloring but with 50% look through effect.
+
+**markdown-code-background-color:**
+
+Used by some sections as color for background. Here it was another HEX value I modified the same way as the one above. Likely not needed most of the time. So call this one optional.
+
+**sidebar-background-color:**
+
+A interesting one. In my case it was set to "var(--primary-background-color)" meaning it is the same as "primary-background-color" aka black in many themes. I changed it to "var(--app-header-background-color)" to always follow the coloring of the header bar.
+
+**app-header-edit-background-color:**
+
+This one was not even in the theme by default, but needs to be set to "var(--app-header-background-color)". This makes the edit mode header look like the normal header color wise.
+
+If you use Card-Mod you can make other crazy things, too. Edit Mode for example has a too dark colored part when your theme got transparent. Why? Because there are two layers on top of each other causing it to look way too dark. This fixes that problem by making one layer transparent:
+
+  card-mod-root: |
+    paper-tabs {
+      background-color: transparent !important;
+    }
+
+Or if you like the transparent sidebar, but prefer darker transparent buttons on it:
+
+  card-mod-sidebar: |
+    paper-icon-item[role=option], paper-icon-item[aria-role=option] {
+      background: var(--ha-card-background) !important;
+    }
 
 ### <a name="closing_words"></a>Closing words
 
