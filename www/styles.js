@@ -1,6 +1,5 @@
 // Stuff you must set up for your own setup
-const token_ = "CENSORED";
-const haURL_ = "https://CENSORED.de";
+const token_ = "YOURAPIKEY";
 const weatherEntity_ = "weather.home";
 const videoPath_ = "/local/animated_backgrounds";
 // const videoPath_ = "https://cdn.flixel.com/flixel";
@@ -27,7 +26,7 @@ const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 // Get entity state off HA for some tinkerin'
 async function callWebApi() {
     const headers = new Headers({Authorization: "Bearer " + token_});
-    const result = await fetch(haURL_+"/api/states/"+weatherEntity_, {method: "GET", headers: headers});
+    const result = await fetch(window.location.origin+"/api/states/"+weatherEntity_, {method: "GET", headers: headers});
     return result.json();
 }
 
