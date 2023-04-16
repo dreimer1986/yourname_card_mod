@@ -66,6 +66,10 @@ First one is the one used by pure randomizer. In my case 62 videos numbered from
 
 Then there are 15 lists for specific weather types. You can differentiate them just by their names. Add the videos you want there, or leave it as it is to use flixel.com hosted ones. In this case it's Villhellm's list extended a bit to just need hail and exceptional condition videos before being complete. Rest is filled already. If you find nice videos on flixel, report them to me please!
 
+### WARNING!
+
+The syntax is there for a reason. So if you see "" or '' and the stuff you wanna edit is between them, then edit to your needs and be 100% sure that they are STILL THERE. :D Same for [] or the , separating stuff. All needs to be the same way as it is right now. But of course you can increase/reduce the filelist entry number to your liking. Right now they all have different numbers of entries and you can add one with a , and '' or remove one by removing it and one ,.
+
 ## <a name="themes"></a>Modify themes for videos
 
 Editing themes to be transparent enough is easy. Open the yaml and look for stuff with background in it's name. For example to get the original yourname theme working I edited these:
