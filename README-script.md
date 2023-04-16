@@ -87,17 +87,21 @@ This one was not even in the theme by default, but needs to be set to "var(--app
 
 If you use Card-Mod you can make other crazy things, too. Edit Mode for example has a too dark colored part when your theme got transparent. Why? Because there are two layers on top of each other causing it to look way too dark. This fixes that problem by making one layer transparent:
 
+```
   card-mod-root: |
     paper-tabs {
       background-color: transparent !important;
     }
+```
 
 Or if you like the transparent sidebar, but prefer darker transparent buttons on it:
 
+```
   card-mod-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option] {
       background: var(--ha-card-background) !important;
     }
+```
 
 ### <a name="closing_words"></a>Closing words
 
