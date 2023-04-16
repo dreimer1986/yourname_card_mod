@@ -31,8 +31,8 @@ Create it when none exists yet.
 5. Possible [Bug](#bug)
 
 ### <a name="manual_installation"></a>Manual installation
-1. Copy the file `yourname_cardmod.yaml` into your Home Assistant themes folder
-2. Copy (or create) the `backgrounds` folder inside `www/` and copy the background image `yourname.jpg` inside `backgrounds`
+1. Create a folder `yourname_cardmod`  in your Home Assistant themes folder.
+2. Copy the file `yourname_cardmod.yaml` into the identical named themes folder.
 3. Restart Home Assistant
 
 ### <a name="activate_transparent_sidebar"></a>Activate transparent Sidebar and animated Background support
