@@ -26,6 +26,8 @@ And here we are now... A perfectly fine working alternative with not all, but mo
 
 ## <a name="install"></a>Installing
 
+Likely quite obvious, but... remove the Lovelace Animated Background Addon and all settings in Locelace RAW configuration. These you might wanna backup anyways. Some of them can be hand converted into the script.
+
 1. styles.js and videoBackground.css must be in www/ folder
 2. Go the the Dashboard Ressources Settings
 3. Add a new JavaScript-Module and type in: /local/styles.js?v=1
