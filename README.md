@@ -68,15 +68,15 @@ Open your styles.js and be sure that under filesRandom all your filenames are in
 
 **Dropdown menu black**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/dropdown.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/dropdown.webp">
 </p>
 
 **Table**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/table.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/table.webp">
 </p>
 
 **Mobile**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/mobile.png">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/mobile.webp">
 </p>
