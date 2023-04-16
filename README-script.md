@@ -8,13 +8,20 @@
 
 ### <a name="foreword"></a>Foreword
 
-After Home Assistant 2023.04 went final many ppl found out that "Animated Lovelace Background" by Villhellm is not working anymore. As I used this addin for a while now, I had a lil tantrum in the 2023.04 beta time... I opened a report right on realization of the problems in Villhellm's repo. I hoped for someone else to fix it as we all know Villhellm has passed away and I never before did much JS coding... Soon there were the needed information made public in #beta what to do for fixing it. In the end, with some useless sidesteps in JS Script form, I myself fixed it and it worked again. I even have a own fork with the fix included. Some obsolete section needed to be removed and the fix from #beta did the rest.
+After Home Assistant 2023.04 went final many ppl found out that "Animated Lovelace Background" by Villhellm is not working anymore. As I used this addin for a while now, I had a lil tantrum in the 2023.04 beta time... I opened a report right on realization of the problems in Villhellm's repo. I hoped for someone else to fix it as we all know Villhellm has passed away and I never before did much JS coding... Soon there were the needed information made public in #beta what to do for fixing all kind of custom addons. In the end, with some useless sidesteps in JS Script form, I myself fixed it and it worked again. I even have a own fork with the fix included. Some obsolete section needed to be removed and the fix from #beta did the rest.
+
 So... why did you make your own solution then you ask? I did quite some messed up things with the addin including the sidebar being transparent on my own theme (You are in it's repo btw ^^). This is not working anymore at all with the current way the addin injects the video into the website.
+
 You can imagine the website as a tree. Down at the roots is <body> and from there you have different sections with different sub-sections etc. etc. creating the website you see. In the past the sidebar was a sub branch of the dashboard, now both are on the same level. Look wise not much of a difference, but a modified dashboard now cannot modify the look of the sidebar anymore. That was a feature I wanted so badly in the past and I did not fight for so long to get it working just to give up now.
+
 I talked with a few people and just found out that this injection is not deep down enough to modify both parts altogether. So I did some experiments. My theme already had a fixing script from addin times that switched some mainly sidebar stuff to transparent background to be able to see the layer below. (Like the video background in that case). That script was my aim.
+
 Playing a video on a website as background is no witchcraft and so I slowly extended the script to play the video instead of the addin. I decided to go down to the very beginning aka <body> with my injection to bypass as many possible future breakages as possible. Now I needed clear view to that layer...
+
 Here my own theme came in handy. I had to modify a few global values and things looked fine. I even removed a few Card-Mod theme hacks and switched to a proper solution in the theme data itself. The result was... WONDERFUL! No flickering, no sometimes not playing video, no short periods showing up the original background image... ALL WAS JUST FINE!
+
 Now I thought I should extend the script a bit. Like, make it more user friendly to modify for our yown needs and add a few neat features maybe. The randomizer was the first step, it get extended to not expect videos to be numbered 1.mp4-x.mp4 but use a random video regardless of the naming. Then I thought about adding the weather depeding background feature from Villhellm's addin, too.
+
 And here we are now... A perfectly fine working alternative with not all, but most features the addin had, too.
 
 ### <a name="install"></a>Installing
