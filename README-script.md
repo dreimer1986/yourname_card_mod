@@ -6,7 +6,7 @@
 * [Modify themes for videos](#themes)
 * [Closing words](#closing_words)
 
-### <a name="foreword"></a>Foreword
+## <a name="foreword"></a>Foreword
 
 After Home Assistant 2023.04 went final many ppl found out that "Animated Lovelace Background" by Villhellm is not working anymore. As I used this addin for a while now, I had a lil tantrum in the 2023.04 beta time... I opened a report right on realization of the problems in Villhellm's repo. I hoped for someone else to fix it as we all know Villhellm has passed away and I never before did much JS coding... Soon there were the needed information made public in #beta what to do for fixing all kind of custom addons. In the end, with some useless sidesteps in JS Script form, I myself fixed it and it worked again. I even have a own fork with the fix included. Some obsolete section needed to be removed and the fix from #beta did the rest.
 
@@ -24,7 +24,7 @@ Now I thought I should extend the script a bit. Like, make it more user friendly
 
 And here we are now... A perfectly fine working alternative with not all, but most features the addin had, too.
 
-### <a name="install"></a>Installing
+## <a name="install"></a>Installing
 
 1. styles.js and videoBackground.css must be in www/ folder
 2. Go the the Dashboard Ressources Settings
@@ -34,54 +34,60 @@ And here we are now... A perfectly fine working alternative with not all, but mo
 **Optional:**
 5. If you plan to use own MP4 files, copy them to www/animated_backgrounds.
 
-### <a name="stuff"></a>Stuff you can do
+## <a name="stuff"></a>Stuff you can do
 
 **What it can do is easy:**
+
 It can playback videos as background. Randomized completely or randomized based on weather.
 
 If you look at the script with a fitting editor you can see the starting section has a few settings you can tinker with. All of them are being explained now:
 
-**const token_:**
+### const token_:
+
 The long term token is needed to communicate with Home Assistant. Addins have funny helpers for this, scripts seem to be left out there. So we go the lil longer route. To create one, click on your username in Home Assistant and go all the way down to the bottom. There you see the list of long term tokens and can create your own, too. Do so, copy it and put it inside the script here.
 
-**const weatherEntity_:**
+### const weatherEntity_:
+
 Needed if you want to use the weather depending backgrounds. I chose my default one here. "weather.home" The state of this entity controls the backgrounds that are being used.
 
-**const videoPath_:**
+### const videoPath_:
+
 Path to your videos. I have my whole bunch on my HA hardware, but you can select a URL here, too. For convenience I put the correct one for the flixel.com hosted images used by Villhellm's addin here in commented out form there aswell. Remove the // and put them before the local folder instead. The flixel.com videos are already in the lists we talk about below.  
 
-**const weatherControl_:**
+### const weatherControl_:
+
 If a pure randomizer is needed, set it to false. For weather based randomizer, set it to true.
 
-**const filesWHATEVER:**
+### const filesWHATEVER:
+
 Below that you can find 15 + 1 lists for video names.
 
 First one is the one used by pure randomizer. In my case 62 videos numbered from 1.mp4 - 62.mp4. Edit to your needs.
 
 Then there are 15 lists for specific weather types. You can differentiate them just by their names. Add the videos you want there, or leave it as it is to use flixel.com hosted ones. In this case it's Villhellm's list extended a bit to just need hail and exceptional condition videos before being complete. Rest is filled already. If you find nice videos on flixel, report them to me please!
 
-### <a name="themes"></a>Modify themes for videos
+## <a name="themes"></a>Modify themes for videos
 
 Editing themes to be transparent enough is easy. Open the yaml and look for stuff with background in it's name. For example to get the original yourname theme working I edited these:
 
-**lovelace-background:**
+### lovelace-background:
 
 The background image of the theme it is. Of course this is in the way if you wanna play a video there. So you set it to "transparent". 
 
-**app-header-background-color:**
+### app-header-background-color:
 
 This is the header background color. (The selection bar on the top of the screen). In the case here it was a funny HEX value. "#141A32" The header bar looks better if it's not 100% transparent, thus I converted it to rgb first by using a online converter: https://www.rapidtables.com/convert/color/hex-to-rgb.html
 Now you get a nice CSS value like "rgb(20, 26, 50)". This needs editing for transparency now. Change rgb to rgba and extend the braces with ", 0,5" making it "rgba(20, 26, 50, 0.5)". This keeps the original coloring but with 50% look through effect.
 
-**markdown-code-background-color:**
+### markdown-code-background-color:
 
 Used by some sections as color for background. Here it was another HEX value I modified the same way as the one above. Likely not needed most of the time. So call this one optional.
 
-**sidebar-background-color:**
+### sidebar-background-color:
 
 A interesting one. In my case it was set to "var(--primary-background-color)" meaning it is the same as "primary-background-color" aka black in many themes. I changed it to "var(--app-header-background-color)" to always follow the coloring of the header bar.
 
-**app-header-edit-background-color:**
+### app-header-edit-background-color:
 
 This one was not even in the theme by default, but needs to be set to "var(--app-header-background-color)". This makes the edit mode header look like the normal header color wise.
 
@@ -103,6 +109,6 @@ Or if you like the transparent sidebar, but prefer darker transparent buttons on
     }
 ```
 
-### <a name="closing_words"></a>Closing words
+## <a name="closing_words"></a>Closing words
 
 All my stuff here is public domain. You can use it for whatever you see it fit. I take over the license from the original theme here. But if you use stuff from me, then at least mention my name. That's all I ask for. ^^
