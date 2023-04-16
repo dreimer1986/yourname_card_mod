@@ -4,6 +4,7 @@ const weatherEntity_ = "weather.home";
 const videoPath_ = "/local/animated_backgrounds";
 // const videoPath_ = "https://cdn.flixel.com/flixel";
 const weatherControl_ = false;
+const videoSwitchPeriod_ = 180;
 
 const filesRandom = ['1.mp4', '2.mp4', '3.mp4', '4.mp4', '5.mp4', '6.mp4', '7.mp4', '8.mp4', '9.mp4', '10.mp4', '11.mp4', '12.mp4', '13.mp4', '14.mp4', '15.mp4', '16.mp4', '17.mp4', '18.mp4', '19.mp4', '20.mp4', '21.mp4', '22.mp4', '23.mp4', '24.mp4', '25.mp4', '26.mp4', '27.mp4', '28.mp4', '29.mp4', '30.mp4', '31.mp4', '32.mp4', '33.mp4', '34.mp4', '35.mp4', '36.mp4', '37.mp4', '38.mp4', '39.mp4', '40.mp4', '41.mp4', '42.mp4', '43.mp4', '44.mp4', '45.mp4', '46.mp4', '47.mp4', '48.mp4', '49.mp4', '50.mp4', '51.mp4', '52.mp4', '53.mp4', '54.mp4', '55.mp4', '56.mp4', '57.mp4', '58.mp4', '59.mp4', '60.mp4', '61.mp4', '62.mp4'];
 
@@ -30,7 +31,7 @@ async function callWebApi() {
     return result.json();
 }
 
-const weather_ = (await callWebApi()).state;
+var weather_ = (await callWebApi()).state;
 console.log(weather_);
 
 // Which file list will it be?
@@ -56,7 +57,7 @@ function giveRightFiles() {
     }
 }
 
-const fileList_ = giveRightFiles();
+var fileList_ = giveRightFiles();
 console.log(fileList_);
 
 // Transparent Sidebar fix by Bram Kragten
@@ -76,3 +77,12 @@ video.type = "video/mp4";
 
 // Insert video background
 document.querySelector("body").insertBefore(video, document.querySelector("body").firstChild);
+
+// After a specific time has passed, change the video. Check the weather sensor, too.
+async function videoUpdateXSec() {
+    weather_ = (await callWebApi()).state;
+    fileList_ = giveRightFiles();
+    const i = Math.floor(Math.random()*fileList_.length);
+    video.src = videoPath_+"/"+fileList_[i];
+}
+setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);

@@ -60,6 +60,10 @@ Path to your videos. I have my whole bunch on my HA hardware, but you can select
 
 If a pure randomizer is needed, set it to false. For weather based randomizer, set it to true.
 
+### const videoSwitchPeriod_:
+
+After x seconds, the video will be diced again. This verifies the weather is still the same, too. Otherwise the dice will check the now correct file list.
+
 ### const filesWHATEVER:
 
 Below that you can find 15 + 1 lists for video names.
