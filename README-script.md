@@ -74,6 +74,10 @@ ONLY used if weatherControl_: false;
 Then there are 15 lists for specific weather types. You can differentiate them just by their names. Add the videos you want there, or leave it as it is to use flixel.com hosted ones. In this case it's Villhellm's list extended a bit to just need hail and exceptional condition videos before being complete. Rest is filled already. If you find nice videos on flixel, report them to me please!
 ONLY used if weatherControl_: true; AND you removed the // in front of the flixel const videoPath_ above. In this case DON'T forget to comment out or competely remove the other const videoPath_ leading to a local folder!
 
+### Sidenote
+
+If you change anything on your settings after installation, go to the the Dashboard Ressources Settings again and edit the number on "/local/styles.js?v=" to something different than before. This will force a Cache reset on it and really activate your updates.
+
 ### WARNING!
 
 The syntax is there for a reason. So if you see "" or '' and the stuff you wanna edit is between them, then edit to your needs and be 100% sure that they are STILL THERE. :D Same for [] or the , separating stuff. All needs to be the same way as it is right now. But of course you can increase/reduce the filelist entry number to your liking. Right now they all have different numbers of entries and you can add one with a , and '' or remove one by removing it and one ,.
@@ -120,6 +124,10 @@ Or if you like the transparent sidebar, but prefer darker transparent buttons on
       background: var(--ha-card-background) !important;
     }
 ```
+
+### WARNING!
+
+Editing the theme is nice and fine, but the updates will not be active before you restart Home Assistant OR you go to the Services tab under Developer Tools and once execute "Home Assistant Frontend: Reload themes".
 
 ## <a name="closing_words"></a>Closing words
 
