@@ -64,9 +64,11 @@ If a pure randomizer is needed, set it to false. For weather based randomizer, s
 
 Below that you can find 15 + 1 lists for video names.
 
-First one is the one used by pure randomizer. In my case 62 videos numbered from 1.mp4 - 62.mp4. Edit to your needs. ONLY used if weatherControl_: false;
+First one is the one used by pure randomizer. In my case 62 videos numbered from 1.mp4 - 62.mp4. Edit to your needs.
+ONLY used if weatherControl_: false;
 
-Then there are 15 lists for specific weather types. You can differentiate them just by their names. Add the videos you want there, or leave it as it is to use flixel.com hosted ones. In this case it's Villhellm's list extended a bit to just need hail and exceptional condition videos before being complete. Rest is filled already. If you find nice videos on flixel, report them to me please! ONLY used if weatherControl_: true; AND you removed the // in front of the flixel const videoPath_ above. In this case DON'T forget to cemment out or competely remove the other const videoPath_ leading to a local folder!
+Then there are 15 lists for specific weather types. You can differentiate them just by their names. Add the videos you want there, or leave it as it is to use flixel.com hosted ones. In this case it's Villhellm's list extended a bit to just need hail and exceptional condition videos before being complete. Rest is filled already. If you find nice videos on flixel, report them to me please!
+ONLY used if weatherControl_: true; AND you removed the // in front of the flixel const videoPath_ above. In this case DON'T forget to comment out or competely remove the other const videoPath_ leading to a local folder!
 
 ### WARNING!
 
