@@ -1,6 +1,6 @@
 # Your Name. - Card-Mod & Animated Background Edition.
 Home Assistant theme - A dark, electric blue theme that reminds (me) of the movie Your Name.
-WARNING! card-mod custom addin is strongly recommended!
+WARNING! card-mod custom add-in is strongly recommended!
 
 * [Prerequisite](#prerequisite)
 * [HACS installation](#hacs_installation)
@@ -39,15 +39,16 @@ Create it when none exists yet.
 !! This section is needed regardless of the installation method used !!
 
 1. styles.js and videoBackground.css must be in `www/` folder
-2. Go the the Dashboard Ressources Settings
+2. Go to the Dashboard Resources Settings
 3. Add a new JavaScript-Module and type in: `/local/styles.js?v=1`
 4. Add a new Stylesheet and type in: `/local/videoBackground.css`
+5. Follow the steps in here to configure the JavaScript-Module. https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
 
 ### <a name="activate_animations"></a>Activate animated Backgrounds
 !! This section is needed regardless of the installation method used !!
 
 I did not yet add animations in my repo, because I have no clue if that is legal, but you can do by yourself then.
-Create the `animated_backgrounds` folder inside `www/` and copy the MP4 files you wanna have as background in there.
+Create the `animated_backgrounds` folder inside `www/` and copy the MP4 files you want to have as background in there.
 Open your styles.js and be sure that under filesRandom all your filenames are in the list. Be 100% sure to keep the format. ['file1.mp4', 'file2.mp4', 'file3.mp4']
 
 ### <a name="enable_the_theme"></a>Enable the theme
@@ -56,9 +57,9 @@ Open your styles.js and be sure that under filesRandom all your filenames are in
 ### <a name="bug"></a>Bug (?)
 - Transparency set for cards can have an undesired effect on other Home Assistant resources. I haven't found a 100% fix for these minimal flaws.
 
-- The needed CSS can not be installed by HACS. Same goes for the Animation activation JS Script! These parts have to be done when using HACS or doing things manually, if you want the transparent Sidebar and animated backgrounds.
+- The needed CSS cannot be installed by HACS. Same goes for the Animation activation JS Script! These parts have to be done when using HACS or doing things manually, if you want the transparent Sidebar and animated backgrounds.
 
-- The JS Script has some nice other features, too. I tried to get the most important stuff from Villhelm's (RIP) Animated background working. More informatin and how to use it on your own themes will slowly grow up here: https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
+- The JS Script has some nice other features, too. I tried to get the most important stuff from Villhelm's (RIP) Animated background working. More information and how to use it on your own themes will slowly grow up here: https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
 
 ### <a name="screenshots"></a>Screenshots
 **Home overview**
