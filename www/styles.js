@@ -69,9 +69,10 @@ const i = Math.floor(Math.random()*fileList_.length);
 // Create video element
 const video = document.createElement('video');
 video.autoplay = true;
+video.id = "myVideo";
 video.loop = true;
 video.muted = true;
-video.id = "myVideo";
+video.playsInline = true;
 video.src = videoPath_+"/"+fileList_[i];
 video.type = "video/mp4";
 
