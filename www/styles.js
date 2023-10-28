@@ -24,6 +24,8 @@ const filesWindy = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4'
 const filesWindyVariant = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4', '5y73ml3xqz6drbuzja1e.hd.mp4'];
 const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
+const filesWallbox = ['ch1.mp4', 'ch2.mp4'];
+
 // Get entity state off HA for some tinkerin'
 async function callWebApi() {
     const headers = new Headers({Authorization: "Bearer " + token_});
@@ -52,6 +54,8 @@ function giveRightFiles() {
         else if (weather_ == "windy") return filesWindy;
         else if (weather_ == "windyvariant") return filesWindyVariant;
         else if (weather_ == "exceptional") return filesExceptional;
+    } else if (window.location.pathname.includes("wallbox")) {
+        return filesWallbox;
     } else {
         return filesRandom;
     }
