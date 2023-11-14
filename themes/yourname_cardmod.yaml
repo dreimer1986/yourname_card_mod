@@ -1,4 +1,7 @@
 yourname_cardmod:
+  dialog-backdrop-filter: "blur(5px)"
+  iron-overlay-backdrop-opacity: "1"
+  iron-overlay-backdrop-background-color: "rgba(0, 0, 0, 0.32)"
   card-mod-theme: "yourname_cardmod"
   ### Header Height ###
   header-height: 44px
