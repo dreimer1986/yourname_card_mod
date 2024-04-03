@@ -2,7 +2,7 @@ console.info(
   `%c  ANIMATED-BACKGROUNDS  %c  version 1.0  %c  by dreimer1986  `,
   'color: orange; font-weight: bold; background: black',
   'color: white; font-weight: bold; background: dimgray',
-    'color: white; font-weight: bold; background: rgb(71, 170, 238)',
+  'color: white; font-weight: bold; background: rgb(71, 170, 238)',
 );
 
 // Stuff you must set up for your own setup
