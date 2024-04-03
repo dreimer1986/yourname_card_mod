@@ -1,3 +1,10 @@
+console.info(
+  `%c  ANIMATED-BACKGROUNDS  %c  version 1.0  %c  by dreimer1986  `,
+  'color: orange; font-weight: bold; background: black',
+  'color: white; font-weight: bold; background: dimgray',
+    'color: white; font-weight: bold; background: rgb(71, 170, 238)',
+);
+
 // Stuff you must set up for your own setup
 const token_ = "YOURAPIKEY";
 const weatherEntity_ = "weather.home";
@@ -34,7 +41,7 @@ async function callWebApi() {
 }
 
 var weather_ = (await callWebApi()).state;
-console.log(weather_);
+// console.log(weather_);
 
 // Which file list will it be?
 function giveRightFiles() {
@@ -62,7 +69,7 @@ function giveRightFiles() {
 }
 
 var fileList_ = giveRightFiles();
-console.log(fileList_);
+// console.log(fileList_);
 
 // Transparent Sidebar fix by Bram Kragten
 document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
