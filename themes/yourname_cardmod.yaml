@@ -4,7 +4,7 @@ yourname_cardmod:
   iron-overlay-backdrop-background-color: "rgba(0, 0, 0, 0.32)"
   card-mod-theme: "yourname_cardmod"
   ### Header Height ###
-  header-height: 44px
+  header-height: 40px
   ### Main Interface Colors ###
   lovelace-background: "transparent"
   app-header-background-color: "rgba(20, 26, 50, 0.5)"
@@ -14,6 +14,7 @@ yourname_cardmod:
   light-primary-color: "#4DA3FF"
   primary-background-color: var(--app-header-background-color)
   secondary-background-color: "#000000"
+  rgb-secondary-background-color: 0, 0, 0
   divider-color: "#3B4C8B"
   markdown-code-background-color: "rgba(30, 39, 71, 0.5)"
   ### Text ###
@@ -49,6 +50,7 @@ yourname_cardmod:
   paper-card-header-color: var(--primary-text-color)
   paper-card-background-color: var(--ha-card-background)
   paper-listbox-background-color: var(--primary-background-color)
+  rgb-card-background-color: var(--rgb-secondary-background-color)
   ### Toggles ###
   paper-toggle-button-checked-button-color: "#FCFCFC"
   paper-toggle-button-checked-bar-color: var(--light-primary-color)
