@@ -46,20 +46,20 @@ var weather_ = (await callWebApi()).state;
 // Which file list will it be?
 function giveRightFiles() {
     if (weatherControl_ == true) {
-        if (weather_ == "clearnight") return filesClearnight;
+        if (weather_ == "clear-night") return filesClearnight;
         else if (weather_ == "cloudy") return filesCloudy;
         else if (weather_ == "fog") return filesFog;
         else if (weather_ == "hail") return filesHail;
         else if (weather_ == "lightning") return filesLightning;
-        else if (weather_ == "lightningrainy") return filesLightningRainy;
+        else if (weather_ == "lightning-rainy") return filesLightningRainy;
         else if (weather_ == "partlycloudy") return filesPartlyCloudy;
         else if (weather_ == "pouring") return filesPouring;
         else if (weather_ == "rainy") return filesRainy;
         else if (weather_ == "snowy") return filesSnowy;
-        else if (weather_ == "snowyrainy") return filesSnowyRainy;
+        else if (weather_ == "snowy-rainy") return filesSnowyRainy;
         else if (weather_ == "sunny") return filesSunny;
         else if (weather_ == "windy") return filesWindy;
-        else if (weather_ == "windyvariant") return filesWindyVariant;
+        else if (weather_ == "windy-variant") return filesWindyVariant;
         else if (weather_ == "exceptional") return filesExceptional;
     } else if (window.location.pathname.includes("wallbox")) {
         return filesWallbox;
