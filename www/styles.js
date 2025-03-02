@@ -31,9 +31,11 @@ const filesWindy = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4'
 const filesWindyVariant = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4', '5y73ml3xqz6drbuzja1e.hd.mp4'];
 const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
-const filesWallbox = ['ch1.mp4', 'ch2.mp4'];
+const eventPageName = "wallbox";
+const filesEventPage = ['ch1.mp4', 'ch2.mp4'];
+const lowPowerMode = false;
 
-var sitenameBefore = window.location.pathname.includes("wallbox");
+var sitenameBefore = window.location.pathname.includes(eventPageName);
 
 // Get entity state off HA for some tinkerin'
 async function callWebApi() {
@@ -63,9 +65,11 @@ function giveRightFiles() {
         else if (weather_ == "windy") return filesWindy;
         else if (weather_ == "windy-variant") return filesWindyVariant;
         else if (weather_ == "exceptional") return filesExceptional;
-    } else if (window.location.pathname.includes("wallbox")) {
-        //video.autoplay = false;
-        return filesWallbox;
+    } else if (window.location.pathname.includes(eventPageName)) {
+        if (lowPowerMode == true) {
+            video.autoplay = false;
+        }
+        return filesEventPage;
     } else {
         return filesRandom;
     }
@@ -99,15 +103,17 @@ async function videoUpdateXSec() {
     fileList_ = giveRightFiles();
     const i = Math.floor(Math.random()*fileList_.length);
     video.src = videoPath_+"/"+fileList_[i];
-    sitenameBefore = window.location.pathname.includes("wallbox");
+    sitenameBefore = window.location.pathname.includes(eventPageName);
 }
 setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 
 window.setInterval(function() {
-    if (window.location.pathname.includes("wallbox") != sitenameBefore) {
+    if (window.location.pathname.includes(eventPageName) != sitenameBefore) {
         console.log("Page Event triggered");
-        //video.autoplay = false;
+        if (lowPowerMode == true) {
+            video.autoplay = false;
+        }
         videoUpdateXSec();
-        sitenameBefore = window.location.pathname.includes("wallbox");
+        sitenameBefore = window.location.pathname.includes(eventPageName);
     }
 }, 1000);
