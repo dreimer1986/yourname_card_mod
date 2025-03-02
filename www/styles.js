@@ -33,6 +33,8 @@ const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
 const filesWallbox = ['ch1.mp4', 'ch2.mp4'];
 
+var sitenameBefore = window.location.pathname.includes("wallbox");
+
 // Get entity state off HA for some tinkerin'
 async function callWebApi() {
     const headers = new Headers({Authorization: "Bearer " + token_});
@@ -62,6 +64,7 @@ function giveRightFiles() {
         else if (weather_ == "windy-variant") return filesWindyVariant;
         else if (weather_ == "exceptional") return filesExceptional;
     } else if (window.location.pathname.includes("wallbox")) {
+        //video.autoplay = false;
         return filesWallbox;
     } else {
         return filesRandom;
@@ -96,5 +99,15 @@ async function videoUpdateXSec() {
     fileList_ = giveRightFiles();
     const i = Math.floor(Math.random()*fileList_.length);
     video.src = videoPath_+"/"+fileList_[i];
+    sitenameBefore = window.location.pathname.includes("wallbox");
 }
 setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
+
+window.setInterval(function() {
+    if (window.location.pathname.includes("wallbox") != sitenameBefore) {
+        console.log("Page Event triggered");
+        //video.autoplay = false;
+        videoUpdateXSec();
+        sitenameBefore = window.location.pathname.includes("wallbox");
+    }
+}, 1000);
