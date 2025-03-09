@@ -32,8 +32,12 @@ const filesWindyVariant = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.
 const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
 const eventPageName = "wallbox";
+const slowDeviceUserAgent = "Kindle";
 const filesEventPage = ['ch1.mp4', 'ch2.mp4'];
 const lowPowerMode = false;
+
+// alert(navigator.userAgent);
+// console.log(navigator.userAgent);
 
 var sitenameBefore = window.location.pathname.includes(eventPageName);
 
@@ -86,7 +90,11 @@ const i = Math.floor(Math.random()*fileList_.length);
 
 // Create video element
 const video = document.createElement('video');
-video.autoplay = true;
+if ((navigator.userAgent).includes(slowDeviceUserAgent)) {
+    video.autoplay = false;
+} else {
+    video.autoplay = true;
+}
 video.id = "myVideo";
 video.loop = true;
 video.muted = true;
