@@ -89,15 +89,19 @@ yourname_cardmod:
   app-header-edit-background-color: var(--app-header-background-color)
 
 # Two layers are one too much in Edit mode
-
-  card-mod-root: |
-    paper-tabs {
-      background-color: transparent !important;
+#  card-mod-root: |
+#    paper-tabs {
+#      background-color: transparent !important;
+#    }
+  card-mod-top-app-bar-fixed: |
+    ::slotted(.content) {
+      background: var(--ha-card-background) !important;
+      --mdc-text-field-fill-color: var(--input-disabled-fill-color) !important;
     }
 
 # Sidebar buttons in darker than background of it
 
   card-mod-sidebar: |
-    paper-icon-item[role=option], paper-icon-item[aria-role=option] {
+    paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
       background: var(--ha-card-background) !important;
     }
