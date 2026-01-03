@@ -7,7 +7,7 @@ console.info(
 
 // Stuff you must set up for your own setup
 const token_ = "YOURAPIKEY";
-const weatherEntity_ = "weather.home";
+const weatherEntity_ = "weather.forecast_home";
 const videoPath_ = "/local/animated_backgrounds";
 // const videoPath_ = "https://cdn.flixel.com/flixel";
 const weatherControl_ = false;
@@ -97,6 +97,7 @@ document.querySelector("body > home-assistant").shadowRoot.querySelector("home-a
 // Randomizer
 const i = Math.floor(Math.random()*fileList_.length);
 
+// Configure video element
 if ((navigator.userAgent).includes(slowDeviceUserAgent) || (lowPowerMode == true && eventPage == true)) {
     video.autoplay = false;
 } else {
@@ -135,6 +136,8 @@ window.setInterval(function() {
     }
 }, 1000);
 
+// Inject our previously external .css file with the help of JS. That way it can be applied in configration.yaml to the frontend, too.
+// It's most likely way too much, but inject it to ShadowBOM and main body.
 const sheet = new CSSStyleSheet();
 sheet.replaceSync('#myVideo { position: fixed; right: 0; bottom: 0; width: 100vw; height: 100vh; object-fit: cover; } .content { position: fixed; bottom: 0; background: rgba(0, 0, 0, 0.5); color: #f1f1f1; width: 100%; padding: 20px; } #myBtn { width: 200px; font-size: 18px; padding: 10px; border: none; background: #000; color: #fff; cursor: pointer; } #myBtn:hover { background: #ddd; color: black; }');
 document.adoptedStyleSheets.push(sheet);
