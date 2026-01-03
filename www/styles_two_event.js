@@ -7,7 +7,7 @@ console.info(
 
 // Stuff you must set up for your own setup
 const token_ = "YOURAPIKEY";
-const weatherEntity_ = "weather.home";
+const weatherEntity_ = "weather.forecast_home";
 const videoPath_ = "/local/animated_backgrounds";
 // const videoPath_ = "https://cdn.flixel.com/flixel";
 const weatherControl_ = false;
