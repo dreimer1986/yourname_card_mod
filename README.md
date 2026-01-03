@@ -41,8 +41,14 @@ Create it when none exists yet.
 1. styles.js and videoBackground.css must be in `www/` folder
 2. Go to the Dashboard Resources Settings
 3. Add a new JavaScript-Module and type in: `/local/styles.js?v=1`
-4. Add a new Stylesheet and type in: `/local/videoBackground.css`
-5. Follow the steps in here to configure the JavaScript-Module. https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
+4. Open your `configuration.yaml`
+5. Add `/local/styles.js?v=1` the samwe spot where you already had to add Card-Mod:
+   frontend:
+     themes: !include_dir_merge_named themes
+     extra_module_url:
+       - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=1909275244204
+       - /local/styles.js?v=1
+6. Follow the steps in here to configure the JavaScript-Module. https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
 
 ### <a name="activate_animations"></a>Activate animated Backgrounds
 !! This section is needed regardless of the installation method used !!
