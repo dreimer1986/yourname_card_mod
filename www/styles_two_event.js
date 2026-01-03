@@ -31,15 +31,17 @@ const filesWindy = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4'
 const filesWindyVariant = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4', '5y73ml3xqz6drbuzja1e.hd.mp4'];
 const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
-const eventPageName = "wallbox";
+const _1stEventPageName = "wallbox";
+const _2ndEventPageName = "cam";
 const slowDeviceUserAgent = "Kindle";
 const filesEventPage = ['ch1.mp4', 'ch2.mp4'];
-const lowPowerMode = false;
+const lowPowerMode = true;
 
 // alert(navigator.userAgent);
 // console.log(navigator.userAgent);
 
-var sitenameBefore = window.location.pathname.includes(eventPageName);
+var _1stSitenameBefore = window.location.pathname.includes(_1stEventPageName);
+var _2ndSitenameBefore = window.location.pathname.includes(_2ndEventPageName);
 var eventPage = false;
 
 // Get entity state off HA for some tinkerin'
@@ -75,10 +77,8 @@ function giveRightFiles() {
         else if (weather_ == "windy") return filesWindy;
         else if (weather_ == "windy-variant") return filesWindyVariant;
         else if (weather_ == "exceptional") return filesExceptional;
-    } else if (window.location.pathname.includes(eventPageName)) {
-        if (lowPowerMode == true) {
-            video.autoplay = false;
-        }
+    } else if (window.location.pathname.includes(_1stEventPageName) || window.location.pathname.includes(_2ndEventPageName)) {
+        video.autoplay = false;
         eventPage = true;
         return filesEventPage;
     } else {
@@ -118,20 +118,22 @@ async function videoUpdateXSec() {
     fileList_ = giveRightFiles();
     const i = Math.floor(Math.random()*fileList_.length);
     video.src = videoPath_+"/"+fileList_[i];
-    sitenameBefore = window.location.pathname.includes(eventPageName);
+    _1stSitenameBefore = window.location.pathname.includes(_1stEventPageName);
+    _2ndSitenameBefore = window.location.pathname.includes(_2ndEventPageName);
 }
 setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 
 window.setInterval(function() {
-    if (window.location.pathname.includes(eventPageName) != sitenameBefore) {
+    if (window.location.pathname.includes(_1stEventPageName) != _1stSitenameBefore || window.location.pathname.includes(_2ndEventPageName) != _2ndSitenameBefore) {
         console.log("Page Event triggered");
-        if (lowPowerMode == true) {
+        if (lowPowerMode == true && eventPage == true) {
             video.autoplay = false;
         } else {
             video.autoplay = true;
         }
         videoUpdateXSec();
-        sitenameBefore = window.location.pathname.includes(eventPageName);
+        _1stSitenameBefore = window.location.pathname.includes(_1stEventPageName);
+        _2ndSitenameBefore = window.location.pathname.includes(_2ndEventPageName);
     }
 }, 1000);
 
