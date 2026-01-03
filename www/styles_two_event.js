@@ -92,7 +92,11 @@ var fileList_ = giveRightFiles();
 // console.log(fileList_);
 
 // Transparent Sidebar fix by Bram Kragten
-document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
+try {
+    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
+} catch (error) {
+    console.log("Cannot read properties of null error on Sidebar transparency");
+}
 
 // Randomizer
 const i = Math.floor(Math.random()*fileList_.length);
