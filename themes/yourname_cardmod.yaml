@@ -47,6 +47,8 @@ yourname_cardmod:
   ### Cards ###
   ha-card-border-radius: '20px'
   ha-card-background: "rgba(0, 0, 0, 0.5)"
+  ha-color-on-neutral-normal: var(--dark-primary-color)
+  wa-color-text-normal: var(--primary-text-color)
   paper-card-header-color: var(--primary-text-color)
   paper-card-background-color: var(--ha-card-background)
   paper-listbox-background-color: var(--primary-background-color)
@@ -93,6 +95,7 @@ yourname_cardmod:
 #    paper-tabs {
 #      background-color: transparent !important;
 #    }
+
   card-mod-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
