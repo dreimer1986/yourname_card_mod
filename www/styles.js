@@ -91,13 +91,6 @@ function giveRightFiles() {
 var fileList_ = giveRightFiles();
 // console.log(fileList_);
 
-// Transparent Sidebar fix by Bram Kragten
-try {
-    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
-} catch (error) {
-    console.log("Cannot read properties of null error on Sidebar transparency");
-}
-
 // Randomizer
 const i = Math.floor(Math.random()*fileList_.length);
 
@@ -127,6 +120,9 @@ async function videoUpdateXSec() {
 }
 setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 
+// Add delay for sidebar transparency
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 window.setInterval(function() {
     if (window.location.pathname.includes(eventPageName) != sitenameBefore) {
         console.log("Page Event triggered");
@@ -148,3 +144,12 @@ document.adoptedStyleSheets.push(sheet);
 const node = document.createElement("div");
 const shadow = node.attachShadow({ mode: "open" });
 shadow.adoptedStyleSheets = [sheet];
+
+// Transparent Sidebar fix by Bram Kragten
+try {
+    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
+} catch (error) {
+    console.log("Cannot read properties of null error on Sidebar transparency. Setting timer");
+    await delay(2500);
+    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
+}
