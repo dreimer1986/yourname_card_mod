@@ -31,17 +31,24 @@ const filesWindy = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4'
 const filesWindyVariant = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4', '5y73ml3xqz6drbuzja1e.hd.mp4'];
 const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
-const _1stEventPageName = "wallbox";
-const _2ndEventPageName = "cam";
+const _WallboxPageName = "wallbox";
+const _CamPageName = "cam";
+const _SettingsPageName = "config";
+const _DevToolsPageName = "developer-tools";
 const slowDeviceUserAgent = "Kindle";
-const filesEventPage = ['ch1.mp4', 'ch2.mp4'];
+const wallboxPage = ['ch1.mp4', 'ch2.mp4'];
+const settingsPage = ['136511-764417302.mp4', '9846-221477041.mp4', '32742-393990266.mp4', '55389-500762756.mp4', '16189-269541588.mp4'];
+const devtoolsPage = ['27706-365890968.mp4', '171-135788231.mp4', '16500-273202599.mp4'];
 const lowPowerMode = true;
 
 // alert(navigator.userAgent);
 // console.log(navigator.userAgent);
+console.log(window.location.pathname);
 
-var _1stSitenameBefore = window.location.pathname.includes(_1stEventPageName);
-var _2ndSitenameBefore = window.location.pathname.includes(_2ndEventPageName);
+var _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
+var _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
+var _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
+var _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
 var eventPage = false;
 
 // Get entity state off HA for some tinkerin'
@@ -77,10 +84,22 @@ function giveRightFiles() {
         else if (weather_ == "windy") return filesWindy;
         else if (weather_ == "windy-variant") return filesWindyVariant;
         else if (weather_ == "exceptional") return filesExceptional;
-    } else if (window.location.pathname.includes(_1stEventPageName) || window.location.pathname.includes(_2ndEventPageName)) {
+    } else if (window.location.pathname.includes(_CamPageName)) {
         video.autoplay = false;
         eventPage = true;
-        return filesEventPage;
+        return filesRandom;
+    } else if (window.location.pathname.includes(_WallboxPageName)) {
+        video.autoplay = true;
+        eventPage = false;
+        return wallboxPage;
+    } else if (window.location.pathname.includes(_SettingsPageName)) {
+        video.autoplay = true;
+        eventPage = false;
+        return settingsPage;
+    } else if (window.location.pathname.includes(_DevToolsPageName)) {
+        video.autoplay = true;
+        eventPage = false;
+        return devtoolsPage;
     } else {
         video.autoplay = true;
         eventPage = false;
@@ -89,7 +108,7 @@ function giveRightFiles() {
 }
 
 var fileList_ = giveRightFiles();
-// console.log(fileList_);
+console.log(fileList_);
 
 // Randomizer
 const i = Math.floor(Math.random()*fileList_.length);
@@ -116,8 +135,10 @@ async function videoUpdateXSec() {
     fileList_ = giveRightFiles();
     const i = Math.floor(Math.random()*fileList_.length);
     video.src = videoPath_+"/"+fileList_[i];
-    _1stSitenameBefore = window.location.pathname.includes(_1stEventPageName);
-    _2ndSitenameBefore = window.location.pathname.includes(_2ndEventPageName);
+    _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
+    _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
+    _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
+    _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
 }
 setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 
@@ -125,7 +146,7 @@ setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 window.setInterval(function() {
-    if (window.location.pathname.includes(_1stEventPageName) != _1stSitenameBefore || window.location.pathname.includes(_2ndEventPageName) != _2ndSitenameBefore) {
+    if (window.location.pathname.includes(_WallboxPageName) != _WallboxPageNameBefore || window.location.pathname.includes(_CamPageName) != _CamPageNameBefore || window.location.pathname.includes(_SettingsPageName) != _SettingsPageNameBefore || window.location.pathname.includes(_DevToolsPageName) != _DevToolsPageNameBefore) {
         console.log("Page Event triggered");
         if (lowPowerMode == true && eventPage == true) {
             video.autoplay = false;
@@ -133,8 +154,10 @@ window.setInterval(function() {
             video.autoplay = true;
         }
         videoUpdateXSec();
-        _1stSitenameBefore = window.location.pathname.includes(_1stEventPageName);
-        _2ndSitenameBefore = window.location.pathname.includes(_2ndEventPageName);
+        _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
+        _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
+        _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
+        _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
     }
 }, 1000);
 
