@@ -147,7 +147,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 window.setInterval(function() {
     if (window.location.pathname.includes(_WallboxPageName) != _WallboxPageNameBefore || window.location.pathname.includes(_CamPageName) != _CamPageNameBefore || window.location.pathname.includes(_SettingsPageName) != _SettingsPageNameBefore || window.location.pathname.includes(_DevToolsPageName) != _DevToolsPageNameBefore) {
-        console.log("Page Event triggered");
+        // console.log("Page Event triggered");
         if (lowPowerMode == true && eventPage == true) {
             video.autoplay = false;
         } else {
@@ -174,7 +174,7 @@ shadow.adoptedStyleSheets = [sheet];
 try {
     document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
 } catch (error) {
-    console.log("Cannot read properties of null error on Sidebar transparency. Setting timer");
+    // console.log("Cannot read properties of null error on Sidebar transparency. Setting timer");
     await delay(2500);
     document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
 }
