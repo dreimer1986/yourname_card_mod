@@ -38,12 +38,12 @@ const _DevToolsPageName = "developer-tools";
 const slowDeviceUserAgent = "Kindle";
 const wallboxPage = ['ch1.mp4', 'ch2.mp4'];
 const settingsPage = ['136511-764417302.mp4', '9846-221477041.mp4', '32742-393990266.mp4', '55389-500762756.mp4', '16189-269541588.mp4'];
-const devtoolsPage = ['27706-365890968.mp4', '171-135788231.mp4', '16500-273202599.mp4'];
+const devtoolsPage = ['16500-273202599.mp4'];
 const lowPowerMode = true;
 
 // alert(navigator.userAgent);
 // console.log(navigator.userAgent);
-console.log(window.location.pathname);
+// console.log(window.location.pathname);
 
 var _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
 var _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
@@ -108,7 +108,7 @@ function giveRightFiles() {
 }
 
 var fileList_ = giveRightFiles();
-console.log(fileList_);
+// console.log(fileList_);
 
 // Randomizer
 const i = Math.floor(Math.random()*fileList_.length);
