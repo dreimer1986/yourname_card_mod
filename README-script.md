@@ -33,13 +33,15 @@ Likely quite obvious, but... remove the Lovelace Animated Background Addon and a
 3. Add a new JavaScript-Module and type in: /local/styles.js?v=1
 4. Open your configuration.yaml
 5. Add /local/styles.js?v=1 the samwe spot where you already had to add Card-Mod:
+   <pre>
    frontend:
      themes: !include_dir_merge_named themes
      extra_module_url:
        - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=1909275244204
        - /local/styles.js?v=1
+   </pre>
 **Optional:**
-6. If you plan to use own MP4 files, copy them to www/animated_backgrounds.
+7. If you plan to use own MP4 files, copy them to www/animated_backgrounds.
 
 ## <a name="stuff"></a>Stuff you can do
 
