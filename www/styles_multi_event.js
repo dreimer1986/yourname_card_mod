@@ -5,6 +5,18 @@ console.info(
     'color: white; font-weight: bold; background: rgb(71, 170, 238)',
 );
 
+//(function() {
+//  // Load the script
+//  const script = document.createElement("script");
+//  script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
+//  script.type = 'text/javascript';
+//  script.addEventListener('load', () => {
+//    console.log(`jQuery ${$.fn.jquery} has been loaded successfully!`);
+//    // use jQuery below
+//  });
+//  document.head.appendChild(script);
+//})();
+
 // Stuff you must set up for your own setup
 const token_ = "YOURAPIKEY";
 const weatherEntity_ = "weather.forecast_home";
@@ -169,12 +181,25 @@ document.adoptedStyleSheets.push(sheet);
 const node = document.createElement("div");
 const shadow = node.attachShadow({ mode: "open" });
 shadow.adoptedStyleSheets = [sheet];
+const iframeSheet = sheet;
 
 // Transparent Sidebar fix by Bram Kragten
-try {
+//try {
     document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
-} catch (error) {
-    // console.log("Cannot read properties of null error on Sidebar transparency. Setting timer");
-    await delay(2500);
-    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
-}
+//} catch (error) {
+//    console.log("Cannot read properties of null error on Sidebar transparency. Setting timer");
+//  await delay(2500);
+//  document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
+//}
+
+//document.querySelector('iframe').contentDocument.body.style.backgroundColor = '#1e1e2d';
+
+//frames['ltr'].contentWindow.document.head.style.setProperty("background-color", "transparent");
+//var iframe = document.getElementById('iframe');
+//jQuery("iframe").contents().style.setProperty("background-color", "transparent");
+//iframe.contentDocument.body.style.setProperty("background-color", "transparent");
+//iframe.contentDocument.body.appendChild(video);
+//document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer > partial-panel-resolver > ha-panel-custom > iframe").querySelector("head").style.setProperty("background-color", "transparent");
+//document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer > partial-panel-resolver > ha-panel-custom > iframe").contentDocument.body.style.setProperty("background-color", "transparent");
+//document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer > partial-panel-resolver > ha-panel-custom > iframe").contentDocument.body.insertBefore(video, document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer > partial-panel-resolver > ha-panel-custom > iframe").contentDocument.body.firstChild);
+//document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer > partial-panel-resolver > ha-panel-custom > iframe").contentDocument.head.append(iframeSheet);
