@@ -8,7 +8,7 @@ yourname_cardmod:
   ### Main Interface Colors ###
   lovelace-background: "transparent"
   app-header-background-color: "rgba(20, 26, 50, 0.5)"
-  card-background-color: "rgba(0, 0, 0, 0.5)"
+  card-background-color: var(--ha-card-background)
   primary-color: "#007AFF"
   disabled-primary-color: "#007AFF54"
   light-primary-color: "#4DA3FF"
@@ -90,16 +90,17 @@ yourname_cardmod:
   ### Edit Mode transparency ###
   app-header-edit-background-color: var(--app-header-background-color)
 
-# Two layers are one too much in Edit mode
-#  card-mod-root: |
-#    paper-tabs {
-#      background-color: transparent !important;
-#    }
-
   card-mod-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
       --mdc-text-field-fill-color: var(--input-disabled-fill-color) !important;
+    }
+    ha-config-section { #> ha-card:nth-child(1)").shadowRoot.querySelector("slot")
+      baackground: var(--ha-card-background) !important;
+    }
+    ::slotted(ha-config-section)
+    {
+      --card-background-color: none;
     }
 
 # Sidebar buttons in darker than background of it
@@ -108,3 +109,9 @@ yourname_cardmod:
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
       background: var(--ha-card-background) !important;
     }
+
+  card-mod-config-yaml: |
+    "* $": |
+      ha-config-section {
+        --card-background-color: none; /* used by     --md-sys-color-surface */
+      }
