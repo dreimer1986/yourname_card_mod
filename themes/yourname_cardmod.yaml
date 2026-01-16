@@ -90,28 +90,31 @@ yourname_cardmod:
   ### Edit Mode transparency ###
   app-header-edit-background-color: var(--app-header-background-color)
 
+  # Fixes text solor of selection context menus and the darker cards inside settings menu.
   card-mod-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
       --mdc-text-field-fill-color: var(--input-disabled-fill-color) !important;
     }
-    ha-config-section { #> ha-card:nth-child(1)").shadowRoot.querySelector("slot")
-      baackground: var(--ha-card-background) !important;
-    }
-    ::slotted(ha-config-section)
-    {
-      --card-background-color: none;
+    ::slotted(ha-config-section) {
+      --card-background-color: transparent !important;
     }
 
-# Sidebar buttons in darker than background of it
-
+  # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   card-mod-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
       background: var(--ha-card-background) !important;
     }
 
+  # Removes the extra darkness in the background of the settings menu deeper levels.
   card-mod-config-yaml: |
     "* $": |
       ha-config-section {
         --card-background-color: none; /* used by     --md-sys-color-surface */
+      }
+      hass-tabs-subpage, hass-subpage {
+        background-color: unset !important;
+      }
+      ha-sidebar {
+        background-color: unset !important;
       }
