@@ -13,8 +13,10 @@ const videoPath_ = "/local/animated_backgrounds";
 const weatherControl_ = false;
 const videoSwitchPeriod_ = 180;
 
+// Video file names inside the folder above that will be randomly used as backgrounds
 const filesRandom = ['1.mp4', '2.mp4', '3.mp4', '4.mp4', '5.mp4', '6.mp4', '7.mp4', '8.mp4', '9.mp4', '10.mp4', '11.mp4', '12.mp4', '13.mp4', '14.mp4', '15.mp4', '16.mp4', '17.mp4', '18.mp4', '19.mp4', '20.mp4', '21.mp4', '22.mp4', '23.mp4', '24.mp4', '25.mp4', '26.mp4', '27.mp4', '28.mp4', '29.mp4', '30.mp4', '31.mp4', '32.mp4', '33.mp4', '34.mp4', '35.mp4', '36.mp4', '37.mp4', '38.mp4', '39.mp4', '40.mp4', '41.mp4', '42.mp4', '43.mp4', '44.mp4', '45.mp4', '46.mp4', '47.mp4', '48.mp4', '49.mp4', '50.mp4', '51.mp4', '52.mp4', '53.mp4', '54.mp4', '55.mp4', '56.mp4', '57.mp4', '58.mp4', '59.mp4', '60.mp4', '61.mp4', '62.mp4'];
 
+// Video file names used from flixel just like Villhellm's addin did
 const filesClearnight = ['x9dr8caygivq5secll7i.hd.mp4', 'v26zyfd6yf0r33s46vpe.hd.mp4', 'ypy8bw9fgw1zv2b4htp2.hd.mp4', 'rosz2gi676xhkiw1ut6i.hd.mp4', 'x5rxll400y2um2xe677c.hd.mp4'];
 const filesCloudy = ['e95h5cqyvhnrk4ytqt4q.hd.mp4', 'l2bjw34wnusyf5q2qq3p.hd.mp4', 'rrgta099ulami3zb9fd2.hd.mp4'];
 const filesFog = ['vwqzlk4turo2449be9uf.hd.mp4', '5363uhabodwwrzgnq6vx.hd.mp4', '4dbfz329lqn0gzxft14l.hd.mp4', 'surn8g651ok6j0hx43sy.hd.mp4', '1xgcgyb68b15ysz30gw9.hd.mp4', 'vabb5tnx2psqf1221ue9.hd.mp4'];
@@ -31,15 +33,20 @@ const filesWindy = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4'
 const filesWindyVariant = ['2qmg1xgcswq79lxu09rl.hd.mp4', 'guwb10mfddctfvwioaex.hd.mp4', '5y73ml3xqz6drbuzja1e.hd.mp4'];
 const filesExceptional = ['Exception1.mp4', 'Exception2.mp4', 'Exception3.mp4'];
 
+// Settings for forcing specific devices into single frame static image mode
+const slowDeviceUserAgent = "Kindle";
+const lowPowerMode = false;
+
+// Settings for forcing specific backgrounds on specific pages
 const _WallboxPageName = "wallbox";
 const _CamPageName = "cam";
 const _SettingsPageName = "config";
 const _DevToolsPageName = "developer-tools";
-const slowDeviceUserAgent = "Kindle";
 const wallboxPage = ['ch1.mp4', 'ch2.mp4'];
 const settingsPage = ['136511-764417302.mp4', '9846-221477041.mp4', '32742-393990266.mp4', '55389-500762756.mp4', '16189-269541588.mp4'];
 const devtoolsPage = ['16500-273202599.mp4'];
-const lowPowerMode = true;
+
+// HERE is the magic happening, you don't have to change anything here. (Unless you want to :P)
 
 // alert(navigator.userAgent);
 // console.log(navigator.userAgent);
@@ -63,7 +70,7 @@ var weather_ = (await callWebApi()).state;
 // Create video element
 const video = document.createElement('video');
 
-// Which file list will it be?
+// Which file list will it be? Do you want to play the videos or only show one frame?
 function giveRightFiles() {
     if (weatherControl_ == true) {
         video.autoplay = true;
@@ -144,6 +151,7 @@ setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 // Add delay for sidebar transparency
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
+// Event handler (extended)
 window.setInterval(function() {
     if (window.location.pathname.includes(_WallboxPageName) != _WallboxPageNameBefore || window.location.pathname.includes(_CamPageName) != _CamPageNameBefore || window.location.pathname.includes(_SettingsPageName) != _SettingsPageNameBefore || window.location.pathname.includes(_DevToolsPageName) != _DevToolsPageNameBefore) {
         // console.log("Page Event triggered");
@@ -169,7 +177,7 @@ const node = document.createElement("div");
 const shadow = node.attachShadow({ mode: "open" });
 shadow.adoptedStyleSheets = [sheet];
 
-// Transparent Sidebar fix by Bram Kragten
+// Transparent Sidebar fix by Bram Kragten (most likely not needed by many themes out there)
 try {
     document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
 } catch (error) {
