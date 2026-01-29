@@ -108,6 +108,10 @@ yourname_cardmod:
 
   # Removes the extra darkness in the background of the settings menu deeper levels.
   card-mod-config-yaml: |
+    .: |
+      ha-config-apps > * {
+        background-color: unset !important;
+      }
     "* $": |
       ha-config-section {
         --card-background-color: none; /* used by     --md-sys-color-surface */
