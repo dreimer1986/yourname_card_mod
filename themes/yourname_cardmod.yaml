@@ -89,6 +89,8 @@ yourname_cardmod:
   input-disabled-ink-color: var(--disabled-primary-color)
   ### Edit Mode transparency ###
   app-header-edit-background-color: var(--app-header-background-color)
+  ### Test ###
+  mdc-theme-surface: "transparent"
 
   # Fixes text solor of selection context menus and the darker cards inside settings menu.
   card-mod-top-app-bar-fixed: |

@@ -177,11 +177,3 @@ const node = document.createElement("div");
 const shadow = node.attachShadow({ mode: "open" });
 shadow.adoptedStyleSheets = [sheet];
 
-// Transparent Sidebar fix by Bram Kragten (most likely not needed by many themes out there)
-try {
-    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
-} catch (error) {
-    console.log("Cannot read properties of null error on Sidebar transparency. Setting timer");
-    await delay(2500);
-    document.querySelector("body > home-assistant").shadowRoot.querySelector("home-assistant-main").shadowRoot.querySelector("ha-drawer").shadowRoot.querySelector(".mdc-drawer").style.setProperty("--mdc-theme-surface", "transparent");
-}
