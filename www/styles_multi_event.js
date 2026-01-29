@@ -1,5 +1,5 @@
 console.info(
-    `%c  ANIMATED-BACKGROUNDS  %c  version 1.0  %c  by dreimer1986  `,
+    '%c  ANIMATED-BACKGROUNDS  %c  version 1.0  %c  by dreimer1986  ',
     'color: orange; font-weight: bold; background: black',
     'color: white; font-weight: bold; background: dimgray',
     'color: white; font-weight: bold; background: rgb(71, 170, 238)',
@@ -40,11 +40,11 @@ const lowPowerMode = false;
 // Settings for forcing specific backgrounds on specific pages
 const _WallboxPageName = "wallbox";
 const _CamPageName = "cam";
-const _SettingsPageName = "config";
 const _DevToolsPageName = "developer-tools";
+const _SettingsPageName = "config";
 const wallboxPage = ['ch1.mp4', 'ch2.mp4'];
-const settingsPage = ['136511-764417302.mp4', '9846-221477041.mp4', '32742-393990266.mp4', '55389-500762756.mp4', '16189-269541588.mp4'];
 const devtoolsPage = ['16500-273202599.mp4'];
+const settingsPage = ['136511-764417302.mp4', '9846-221477041.mp4', '32742-393990266.mp4', '55389-500762756.mp4', '16189-269541588.mp4'];
 
 // HERE is the magic happening, you don't have to change anything here. (Unless you want to :P)
 
@@ -53,8 +53,8 @@ const devtoolsPage = ['16500-273202599.mp4'];
 
 var _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
 var _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
-var _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
 var _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
+var _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
 var eventPage = false;
 
 // Get entity state off HA for some tinkerin'
@@ -98,14 +98,14 @@ function giveRightFiles() {
         video.autoplay = true;
         eventPage = false;
         return wallboxPage;
-    } else if (window.location.pathname.includes(_SettingsPageName)) {
-        video.autoplay = true;
-        eventPage = false;
-        return settingsPage;
     } else if (window.location.pathname.includes(_DevToolsPageName)) {
         video.autoplay = true;
         eventPage = false;
         return devtoolsPage;
+    } else if (window.location.pathname.includes(_SettingsPageName)) {
+        video.autoplay = true;
+        eventPage = false;
+        return settingsPage;
     } else {
         video.autoplay = true;
         eventPage = false;
@@ -143,8 +143,8 @@ async function videoUpdateXSec() {
     video.src = videoPath_+"/"+fileList_[i];
     _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
     _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
-    _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
     _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
+    _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
 }
 setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
 
@@ -153,7 +153,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 // Event handler (extended)
 window.setInterval(function() {
-    if (window.location.pathname.includes(_WallboxPageName) != _WallboxPageNameBefore || window.location.pathname.includes(_CamPageName) != _CamPageNameBefore || window.location.pathname.includes(_SettingsPageName) != _SettingsPageNameBefore || window.location.pathname.includes(_DevToolsPageName) != _DevToolsPageNameBefore) {
+    if (window.location.pathname.includes(_WallboxPageName) != _WallboxPageNameBefore || window.location.pathname.includes(_CamPageName) != _CamPageNameBefore || window.location.pathname.includes(_DevToolsPageName) != _DevToolsPageNameBefore || window.location.pathname.includes(_SettingsPageName) != _SettingsPageNameBefore) {
         // console.log("Page Event triggered");
         if (lowPowerMode == true && eventPage == true) {
             video.autoplay = false;
@@ -163,8 +163,8 @@ window.setInterval(function() {
         videoUpdateXSec();
         _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
         _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
-        _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
         _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
+        _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
     }
 }, 1000);
 
