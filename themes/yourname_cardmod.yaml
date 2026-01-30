@@ -90,7 +90,7 @@ yourname_cardmod:
   ### Edit Mode transparency ###
   app-header-edit-background-color: var(--app-header-background-color)
   ### Test ###
-  mdc-theme-surface: "transparent"
+  mdc-theme-surface: "rgba(0, 0, 0, 0.5)"
 
   # Fixes text solor of selection context menus and the darker cards inside settings menu.
   card-mod-top-app-bar-fixed: |
@@ -123,4 +123,5 @@ yourname_cardmod:
       }
       ha-sidebar {
         background-color: unset !important;
+        mdc-theme-surface: "transparent" !important;
       }
