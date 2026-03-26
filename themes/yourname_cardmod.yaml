@@ -91,6 +91,20 @@ yourname_cardmod:
   app-header-edit-background-color: var(--app-header-background-color)
   ### Test ###
   mdc-theme-surface: "rgba(0, 0, 0, 0.5)"
+  ha-color-form-background: "rgba(0, 0, 0, 0.5)"
+  ha-color-form-background-hover: "rgba(13, 13, 13, 0.5)"
+  ha-color-form-background-disabled: "rgba(37, 37, 37, 0.5)"
+  
+  button-color-fill-normal-active: "rgba(70, 90, 99, 0.5)"
+  button-color-fill-normal-hover: "rgba(70, 115, 127, 0.5)"
+  ha-color-fill-primary-normal-active: "rgba(70, 90, 99, 0.5)"
+  ha-color-fill-primary-normal-hover: "rgba(70, 115, 127, 0.5)"
+  wa-color-fill-loud: "rgba(70, 80, 125, 0.5)"
+  wa-color-fill-normal: "rgba(70, 90, 99, 0.5)"
+  wa-color-fill-quiet: "rgba(70, 90, 99, 0.5)"
+  wa-color-brand-fill-loud: "rgba(70, 80, 125, 0.5)"
+  wa-color-brand-fill-normal: "rgba(70, 90, 99, 0.5)"
+  brand-fill-quiet: "rgba(70, 90, 99, 0.5)"
 
   # Fixes text solor of selection context menus and the darker cards inside settings menu.
   card-mod-top-app-bar-fixed: |
