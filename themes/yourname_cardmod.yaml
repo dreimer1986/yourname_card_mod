@@ -1,22 +1,21 @@
 yourname_cardmod:
-  dialog-backdrop-filter: "blur(5px)"
-  iron-overlay-backdrop-opacity: "1"
-  iron-overlay-backdrop-background-color: "rgba(0, 0, 0, 0.32)"
+  dialog-backdrop-filter: blur(5px) #blur(20px)
+  iron-overlay-backdrop-opacity: 1
+  iron-overlay-backdrop-background-color: rgba(0, 0, 0, 0.32)
   card-mod-theme: "yourname_cardmod"
   ### Header Height ###
   header-height: 40px
   ### Main Interface Colors ###
-  lovelace-background: "transparent"
-  app-header-background-color: "rgba(20, 26, 50, 0.5)"
-  card-background-color: var(--ha-card-background)
+  lovelace-background: 'transparent' #center / cover no-repeat url("/local/backgrounds/yourname.jpg") fixed
+  app-header-background-color: "rgba(20, 26, 50, 0.5)" #141A32
+  card-background-color: var(--ha-card-background) #rgba(0, 0, 0, 0.5)
   primary-color: "#007AFF"
-  disabled-primary-color: "#007AFF54"
   light-primary-color: "#4DA3FF"
   primary-background-color: var(--app-header-background-color)
   secondary-background-color: "#000000"
   rgb-secondary-background-color: 0, 0, 0
   divider-color: "#3B4C8B"
-  markdown-code-background-color: "rgba(30, 39, 71, 0.5)"
+  markdown-code-background-color: "rgba(30, 39, 71, 0.5)" #1E2747
   ### Text ###
   primary-text-color: "#FFFFFF"
   secondary-text-color: var(--light-primary-color)
@@ -28,7 +27,7 @@ yourname_cardmod:
   sidebar-selected-background-color: var(--primary-background-color)
   sidebar-selected-icon-color: var(--light-primary-color)
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
-  sidebar-background-color: var(--app-header-background-color)
+  sidebar-background-color: var(--app-header-background-color) #var(--primary-background-color)
   ### States and Badges ###
   state-icon-color: var(--primary-color)
   state-icon-active-color: "#FBCD41"
@@ -47,8 +46,6 @@ yourname_cardmod:
   ### Cards ###
   ha-card-border-radius: '20px'
   ha-card-background: "rgba(0, 0, 0, 0.5)"
-  ha-color-on-neutral-normal: var(--dark-primary-color)
-  wa-color-text-normal: var(--primary-text-color)
   paper-card-header-color: var(--primary-text-color)
   paper-card-background-color: var(--ha-card-background)
   paper-listbox-background-color: var(--primary-background-color)
@@ -65,6 +62,12 @@ yourname_cardmod:
   ### Switches ###
   switch-unchecked-button-color: var(--divider-color)
   switch-unchecked-track-color: var(--divider-color)
+  ### Inputs ###
+  input-fill-color: "rgba(0, 0, 0, 0.5)"
+  input-label-ink-color: var(--primary-color)
+  input-ink-color: var(--primary-color)
+  input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
+  input-disabled-ink-color: var(--disabled-primary-color)
   ### Weather Icons ###
   weather-icon-clear-night: url("/local/icons/clear-night.svg")
   weather-icon-cloudy: url("/local/icons/cloudy.svg")
@@ -81,20 +84,17 @@ yourname_cardmod:
   weather-icon-windy: url("/local/icons/windy.svg")
   weather-icon-windy-variant: url("/local/icons/windy-variant.svg")
   weather-icon-exceptional: url("/local/icons/exceptional.svg")
-  ### Inputs ###
-  input-fill-color: "rgba(0, 0, 0, 0.5)"
-  input-label-ink-color: var(--primary-color)
-  input-ink-color: var(--primary-color)
-  input-disabled-fill-color: "rgba(0, 0, 0, 0.33)"
-  input-disabled-ink-color: var(--disabled-primary-color)
+  ### Additions to original ###
+  ha-color-on-neutral-normal: var(--dark-primary-color)
+  wa-color-text-normal: var(--primary-text-color)
+  disabled-primary-color: "#007AFF54"
+  mdc-theme-surface: "rgba(0, 0, 0, 0.5)"
   ### Edit Mode transparency ###
   app-header-edit-background-color: var(--app-header-background-color)
-  ### Test ###
-  mdc-theme-surface: "rgba(0, 0, 0, 0.5)"
+  ### Additions for 04.2026 ###
   ha-color-form-background: "rgba(0, 0, 0, 0.5)"
   ha-color-form-background-hover: "rgba(13, 13, 13, 0.5)"
   ha-color-form-background-disabled: "rgba(37, 37, 37, 0.5)"
-  
   button-color-fill-normal-active: "rgba(70, 90, 99, 0.5)"
   button-color-fill-normal-hover: "rgba(70, 115, 127, 0.5)"
   ha-color-fill-primary-normal-active: "rgba(70, 90, 99, 0.5)"
