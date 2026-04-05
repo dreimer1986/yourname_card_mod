@@ -104,7 +104,7 @@ yourname_cardmod:
   wa-color-fill-quiet: "rgba(70, 90, 99, 0.5)"
   wa-color-brand-fill-loud: "rgba(70, 80, 125, 0.5)"
   wa-color-brand-fill-normal: "rgba(70, 90, 99, 0.5)"
-  brand-fill-quiet: "rgba(70, 90, 99, 0.5)"
+  wa-color-brand-fill-quiet: "rgba(70, 90, 99, 0.5)"
 
   # Fixes text solor of selection context menus and the darker cards inside settings menu.
   card-mod-top-app-bar-fixed: |
