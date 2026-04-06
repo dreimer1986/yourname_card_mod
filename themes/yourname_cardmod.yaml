@@ -29,7 +29,7 @@ YourName_Frost_(CardMod):
   light-primary-color: "#9DCAFF"
   accent-color: "#6EB6FF"
 
-  primary-background-color: "#0B1020"
+  primary-background-color: var(--app-header-background-color)
   secondary-background-color: "#0F172A"
   rgb-secondary-background-color: 15, 23, 42
 
