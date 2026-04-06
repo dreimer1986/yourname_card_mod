@@ -125,9 +125,9 @@ YourName_Frost_(CardMod):
   app-header-edit-background-color: var(--app-header-background-color)
 
   ### Additions for 04.2026 ###
-  ha-color-form-background: "rgba(0, 0, 0, 0.5)"
-  ha-color-form-background-hover: "rgba(13, 13, 13, 0.5)"
-  ha-color-form-background-disabled: "rgba(37, 37, 37, 0.5)"
+  ha-color-form-background: "rgba(25, 25, 25, 0.5)"
+  ha-color-form-background-hover: "rgba(38, 38, 38, 0.5)"
+  ha-color-form-background-disabled: "rgba(62, 62, 62, 0.5)"
   button-color-fill-normal-active: "rgba(70, 90, 99, 0.5)"
   button-color-fill-normal-hover: "rgba(70, 115, 127, 0.5)"
   ha-color-fill-primary-normal-active: "rgba(70, 90, 99, 0.5)"
