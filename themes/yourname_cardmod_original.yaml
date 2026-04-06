@@ -1,8 +1,8 @@
-YourName_(CardMod):
+Your Name. (CardMod):
   dialog-backdrop-filter: blur(5px) #blur(20px)
   iron-overlay-backdrop-opacity: 1
   iron-overlay-backdrop-background-color: rgba(0, 0, 0, 0.32)
-  card-mod-theme: "YourName_(CardMod)"
+  card-mod-theme: "Your Name. (CardMod)"
   ### Header Height ###
   header-height: 40px
   ### Main Interface Colors ###
