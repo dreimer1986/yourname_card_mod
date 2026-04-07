@@ -24,7 +24,7 @@ Your Name. Frost (CardMod):
   app-header-text-color: "#FFFFFF"
 
   ### Main interface ###
-  lovelace-background: 'transparent'
+  lovelace-background: "transparent"
   primary-color: "#6EB6FF"
   light-primary-color: "#9DCAFF"
   accent-color: "#6EB6FF"
@@ -49,6 +49,7 @@ Your Name. Frost (CardMod):
   sidebar-selected-background-color: "rgba(110, 182, 255, 0.14)"
   sidebar-selected-icon-color: "#A9D4FF"
   sidebar-selected-text-color: "#F4F8FF"
+  sidebar-menu-button-background-color: "transparent"
 
   ### States and badges ###
   state-icon-color: var(--primary-color)
@@ -220,3 +221,7 @@ Your Name. Frost (CardMod):
         background-color: unset !important;
         mdc-theme-surface: "transparent" !important;
       }
+  card-mod-drawer: |
+    :host aside.mdc-drawer {
+      background-color: transparent;
+    }
