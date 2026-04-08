@@ -18,7 +18,7 @@ I talked with a few people and just found out that this injection is not deep do
 
 Playing a video on a website as background is no witchcraft and so I slowly extended the script to play the video instead of the addin. I decided to go down to the very beginning aka "body" with my injection to bypass as many possible future breakages as possible. Now I needed clear view to that layer...
 
-Here my own theme came in handy. I had to modify a few global values and things looked fine. I even removed a few Card-Mod theme hacks and switched to a proper solution in the theme data itself. The result was... WONDERFUL! No flickering, no sometimes not playing video, no short periods showing up the original background image... ALL WAS JUST FINE!
+Here my own theme came in handy. I had to modify a few global values and things looked fine. I even removed a few UIX theme hacks and switched to a proper solution in the theme data itself. The result was... WONDERFUL! No flickering, no sometimes not playing video, no short periods showing up the original background image... ALL WAS JUST FINE!
 
 Now I thought I should extend the script a bit. Like, make it more user friendly to modify for our yown needs and add a few neat features maybe. The randomizer was the first step, it got extended to not expect videos to be numbered 1.mp4-x.mp4 but use a random video regardless of the naming. Then I thought about adding the weather depeding background feature from Villhellm's addin, too.
 
@@ -32,12 +32,11 @@ Likely quite obvious, but... remove the Lovelace Animated Background Addon and a
 2. Go the the Dashboard Ressources Settings
 3. Add a new JavaScript-Module and type in: /local/styles.js?v=1
 4. Open your configuration.yaml
-5. Add /local/styles.js?v=1 the samwe spot where you already had to add Card-Mod:
+5. Add /local/styles.js?v=1 to the frontend section:
    <pre>
    frontend:
      themes: !include_dir_merge_named themes
      extra_module_url:
-       - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=1909275244204
        - /local/styles.js?v=1
    </pre>
 **Optional:**
@@ -114,10 +113,10 @@ A interesting one. In my case it was set to "var(--primary-background-color)" me
 
 This one was not even in the theme by default, but needs to be set to "var(--app-header-background-color)". This makes the edit mode header look like the normal header color wise.
 
-If you use Card-Mod you can make other crazy things, too. Edit Mode for example has a too dark colored part when your theme got transparent. Why? Because there are two layers on top of each other causing it to look way too dark. This fixes that problem by making one layer transparent:
+If you use UIX you can make other crazy things, too. Edit Mode for example has a too dark colored part when your theme got transparent. Why? Because there are two layers on top of each other causing it to look way too dark. This fixes that problem by making one layer transparent:
 
 ```
-  card-mod-root: |
+  uix-root: |
     paper-tabs {
       background-color: transparent !important;
     }
@@ -126,7 +125,7 @@ If you use Card-Mod you can make other crazy things, too. Edit Mode for example 
 Or if you like the transparent sidebar, but prefer darker transparent buttons on it:
 
 ```
-  card-mod-sidebar: |
+  uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option] {
       background: var(--ha-card-background) !important;
     }

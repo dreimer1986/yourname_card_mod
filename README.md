@@ -1,6 +1,6 @@
-# Your Name. - Card-Mod & Animated Background Edition.
+# Your Name. - UIX & Animated Background Edition.
 Home Assistant theme - A dark, electric blue theme that reminds (me) of the movie Your Name.
-WARNING! card-mod custom add-in is strongly recommended!
+WARNING! UIX custom add-in is strongly recommended!
 
 * [Prerequisite](#prerequisite)
 * [HACS installation](#hacs_installation)
@@ -25,14 +25,14 @@ Create it when none exists yet.
 
 ### <a name="hacs_installation"></a>HACS installation
 1. Open the Community Store (HACS)
-2. Search for `Your Name. Card-Mod & Animated Background Edition`
+2. Search for `Your Name. UIX & Animated Background Edition`
 3. Install it
 4. Restart Home Assistant
 5. Possible [Bug](#bug)
 
 ### <a name="manual_installation"></a>Manual installation
-1. Create a folder `yourname_cardmod`  in your Home Assistant themes folder.
-2. Copy the file `yourname_cardmod.yaml` into the identical named themes folder.
+1. Create a folder `yourname_uix`  in your Home Assistant themes folder.
+2. Copy the file `yourname_uix.yaml` into the identical named themes folder.
 3. Restart Home Assistant
 
 ### <a name="activate_transparent_sidebar"></a>Activate transparent Sidebar and animated Background support
@@ -42,12 +42,11 @@ Create it when none exists yet.
 2. Go to the Dashboard Resources Settings
 3. Add a new JavaScript-Module and type in: `/local/styles.js?v=1`
 4. Open your `configuration.yaml`
-5. Add `/local/styles.js?v=1` the samwe spot where you already had to add Card-Mod:
+5. Add `/local/styles.js?v=1` to the frontend section:
    <pre>
    frontend:
      themes: !include_dir_merge_named themes
      extra_module_url:
-       - /hacsfiles/lovelace-card-mod/card-mod.js?hacstag=1909275244204
        - /local/styles.js?v=1
    </pre>
 7. Follow the steps in here to configure the JavaScript-Module. https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
@@ -60,7 +59,7 @@ Create the `animated_backgrounds` folder inside `www/` and copy the MP4 files yo
 Open your styles.js and be sure that under filesRandom all your filenames are in the list. Be 100% sure to keep the format. ['file1.mp4', 'file2.mp4', 'file3.mp4']
 
 ### <a name="enable_the_theme"></a>Enable the theme
-- Open your **Profile** in Home Assistant and select the theme called **yourname_cardmod**
+- Open your **Profile** in Home Assistant and select the theme called **yourname_uix**
 
 ### <a name="bug"></a>Bug (?)
 - Transparency set for cards can have an undesired effect on other Home Assistant resources. I haven't found a 100% fix for these minimal flaws.

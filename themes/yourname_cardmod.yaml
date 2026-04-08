@@ -1,10 +1,10 @@
-Your Name. Frost (CardMod):
+Your Name. Frost (UIX):
   ### Give me blurrr ###
   ha-dialog-scrim-backdrop-filter: "blur(5px)"
   ha-dialog-scrim-background: "rgba(11, 16, 32, 0.48)"
-
-  ### CardMod ###
-  uix-theme: "Your Name. Frost (CardMod)"
+  
+  ### UIX ###
+  uix-theme: "Your Name. Frost (UIX)"
 
   ### Typography ###
   ha-font-family-body: "'Nunito Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
@@ -119,7 +119,6 @@ Your Name. Frost (CardMod):
   ### Additions to original ###
   ha-color-on-neutral-normal: var(--dark-primary-color)
   wa-color-text-normal: var(--primary-text-color)
-
   disabled-primary-color: "#007AFF54"
   mdc-theme-surface: "rgba(0, 0, 0, 0.5)"
 
@@ -189,7 +188,7 @@ Your Name. Frost (CardMod):
   ha-color-green-05: "rgba(227, 249, 227, 0.5)"
 
   # Fixes text solor of selection context menus and the darker cards inside settings menu.
-  card-mod-top-app-bar-fixed: |
+  uix-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
       --mdc-text-field-fill-color: var(--input-disabled-fill-color) !important;
@@ -199,7 +198,7 @@ Your Name. Frost (CardMod):
     }
 
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
-  card-mod-sidebar: |
+  uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
       background: var(--ha-card-background) !important;
     }
@@ -207,7 +206,7 @@ Your Name. Frost (CardMod):
       --sidebar-background-color: transparent !important;
     }
   # Removes the extra darkness in the background of the settings menu deeper levels.
-  card-mod-config-yaml: |
+  uix-config-yaml: |
     .: |
       ha-config-apps > * {
         background-color: unset !important;
@@ -223,7 +222,7 @@ Your Name. Frost (CardMod):
         background-color: unset !important;
         mdc-theme-surface: transparent !important;
       }
-  card-mod-drawer: |
+  uix-drawer: |
     :host aside.mdc-drawer {
       background-color: transparent !important;
     }

@@ -1,8 +1,8 @@
-Your Name. (CardMod):
+Your Name. (UIX):
   dialog-backdrop-filter: blur(5px) #blur(20px)
   iron-overlay-backdrop-opacity: 1
   iron-overlay-backdrop-background-color: rgba(0, 0, 0, 0.32)
-  card-mod-theme: "Your Name. (CardMod)"
+  uix-theme: "Your Name. (UIX)"
   ### Header Height ###
   header-height: 40px
   ### Main Interface Colors ###
@@ -27,7 +27,8 @@ Your Name. (CardMod):
   sidebar-selected-background-color: var(--primary-background-color)
   sidebar-selected-icon-color: var(--light-primary-color)
   sidebar-selected-text-color: var(--sidebar-selected-icon-color)
-  sidebar-background-color: var(--app-header-background-color) #var(--primary-background-color)
+  sidebar-background-color: transparent #var(--primary-background-color)
+  sidebar-menu-button-background-color: var(--app-header-background-color)
   ### States and Badges ###
   state-icon-color: var(--primary-color)
   state-icon-active-color: "#FBCD41"
@@ -107,7 +108,7 @@ Your Name. (CardMod):
   wa-color-brand-fill-quiet: "rgba(70, 90, 99, 0.5)"
 
   # Fixes text solor of selection context menus and the darker cards inside settings menu.
-  card-mod-top-app-bar-fixed: |
+  uix-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
       --mdc-text-field-fill-color: var(--input-disabled-fill-color) !important;
@@ -117,13 +118,15 @@ Your Name. (CardMod):
     }
 
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
-  card-mod-sidebar: |
+  uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
       background: var(--ha-card-background) !important;
     }
-
+    :host {
+      --sidebar-background-color: transparent !important;
+    }
   # Removes the extra darkness in the background of the settings menu deeper levels.
-  card-mod-config-yaml: |
+  uix-config-yaml: |
     .: |
       ha-config-apps > * {
         background-color: unset !important;
@@ -137,5 +140,9 @@ Your Name. (CardMod):
       }
       ha-sidebar {
         background-color: unset !important;
-        mdc-theme-surface: "transparent" !important;
+        mdc-theme-surface: transparent !important;
       }
+  uix-drawer: |
+    :host aside.mdc-drawer {
+      background-color: transparent !important;
+    }
