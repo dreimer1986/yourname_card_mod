@@ -49,7 +49,7 @@ Create it when none exists yet.
      extra_module_url:
        - /local/styles.js?v=1
    </pre>
-7. Follow the steps in here to configure the JavaScript-Module. https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
+7. Follow the steps in here to configure the JavaScript-Module. https://github.com/dreimer1986/yourname_uix/blob/master/README-script.md
 
 ### <a name="activate_animations"></a>Activate animated Backgrounds
 !! This section is needed regardless of the installation method used !!
@@ -66,25 +66,25 @@ Open your styles.js and be sure that under filesRandom all your filenames are in
 
 - The needed CSS cannot be installed by HACS. Same goes for the Animation activation JS Script! These parts have to be done when using HACS or doing things manually, if you want the transparent Sidebar and animated backgrounds.
 
-- The JS Script has some nice other features, too. I tried to get the most important stuff from Villhelm's (RIP) Animated background working. More information and how to use it on your own themes will slowly grow up here: https://github.com/dreimer1986/yourname_card_mod/blob/master/README-script.md
+- The JS Script has some nice other features, too. I tried to get the most important stuff from Villhelm's (RIP) Animated background working. More information and how to use it on your own themes will slowly grow up here: https://github.com/dreimer1986/yourname_uix/blob/master/README-script.md
 
 ### <a name="screenshots"></a>Screenshots
 **Home overview**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/animation.webp">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/animation.webp">
 </p>
 
 **Dropdown menu black**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/dropdown.webp">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/dropdown.webp">
 </p>
 
 **Table**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/table.webp">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/table.webp">
 </p>
 
 **Mobile**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_card_mod/master/images/mobile.webp">
+  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/mobile.webp">
 </p>
