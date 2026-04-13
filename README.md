@@ -98,30 +98,30 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
 
 **Kataware-doki**
 <p align="center">
-  <img src="./assets/kataware-doki-home-overview.webm" alt="Home overview">
+  <img src="./assets/kataware-doki-home-overview.webp" alt="Home overview">
 </p>
 
 **Tiamat**
 <p align="center">
-  <img src="./assets/tiamat-home-overview.webm" alt="Home overview">
+  <img src="./assets/tiamat-home-overview.webp" alt="Home overview">
 </p>
 
 **Kataware-doki - Settings - About**
 <p align="center">
-  <img src="./assets/kataware-doki-settings-about.webm" alt="Settings - About">
+  <img src="./assets/kataware-doki-settings-about.webp" alt="Settings - About">
 </p>
 
 **Tiamat - Settings - About**
 <p align="center">
-  <img src="./assets/tiamat-settings-about.webm" alt="Settings - About">
+  <img src="./assets/tiamat-settings-about.webp" alt="Settings - About">
 </p>
 
 **Kataware-doki - Mobile**
 <p align="center">
-  <img src="./assets/kataware-doki-mobile.webm" alt="Mobile version" width="50%">
+  <img src="./assets/kataware-doki-mobile.webp" alt="Mobile version" width="50%">
 </p>
 
 **Tiamat - Mobile**
 <p align="center">
-  <img src="./assets/tiamat-mobile.webm" alt="Mobile version" width="50%">
+  <img src="./assets/tiamat-mobile.webp" alt="Mobile version" width="50%">
 </p>
