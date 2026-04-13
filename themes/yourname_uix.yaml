@@ -319,6 +319,20 @@ Your Name. - Kataware-doki (UIX):
     :host {
         --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
     }
+  # Background in the profile page needs love, too.
+  uix-profile-yaml: |
+    .: |
+      ha-profile-section-general > * {
+          background-color: unset !important;
+          --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+          --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        }
+    "* $": |
+      hass-tabs-subpage, hass-subpage {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
@@ -703,6 +717,20 @@ Your Name. - Tiamat (UIX):
     :host {
         --app-header-background-color: rgba(5, 10, 22, 0.66) !important;
     }
+  # Background in the profile page needs love, too.
+  uix-profile-yaml: |
+    .: |
+      ha-profile-section-general > * {
+          background-color: unset !important;
+          --app-header-background-color: rgba(5, 10, 22, 0.66) !important;
+          --sidebar-background-color: rgba(5, 10, 22, 0.66) !important;
+        }
+    "* $": |
+      hass-tabs-subpage, hass-subpage {
+        background-color: unset !important;
+        --app-header-background-color: rgba(5, 10, 22, 0.66) !important;
+        --sidebar-background-color: rgba(5, 10, 22, 0.66) !important;
+      }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {

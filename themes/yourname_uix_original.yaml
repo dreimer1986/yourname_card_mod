@@ -124,6 +124,20 @@ Your Name. (UIX):
     :host {
         --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
     }
+  # Background in the profile page needs love, too.
+  uix-profile-yaml: |
+    .: |
+      ha-profile-section-general > * {
+          background-color: unset !important;
+          --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+          --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
+        }
+    "* $": |
+      hass-tabs-subpage, hass-subpage {
+        background-color: unset !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
+      }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
