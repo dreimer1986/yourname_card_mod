@@ -198,7 +198,7 @@ Your Name. - Kataware-doki (UIX):
   energy-water-color: "#6BC4D4"
 
   # ── 19. Modern HA Color API ───────────────────────────────────
-  ha-color-neutral-95: "#060714"
+  # ha-color-neutral-95: "#060714"
   wa-color-surface-default: "#07081C"
   ha-color-fill-primary-quiet-resting: "rgba(180, 143, 255, 0.16)"
   ha-color-fill-primary-quiet-hover: "rgba(180, 143, 255, 0.26)"
@@ -302,7 +302,7 @@ Your Name. - Kataware-doki (UIX):
 
   # ── X. UIX Tinkering ──────────────────────────────────────────
 
-  # Fixes text solor of selection context menus and the darker cards inside settings menu.
+  # Fixes text color of selection context menus and the darker cards inside settings menu.
   uix-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
@@ -311,7 +311,14 @@ Your Name. - Kataware-doki (UIX):
     ::slotted(ha-config-section) {
       --card-background-color: transparent !important;
     }
-
+    :host {
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+    }
+  # Fix for too bright top bar in Developer Tools
+  uix-developer-tools: |
+    :host {
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+    }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
@@ -320,11 +327,38 @@ Your Name. - Kataware-doki (UIX):
     :host {
       --sidebar-background-color: transparent !important;
     }
-  # Removes the extra darkness in the background of the settings menu deeper levels.
+  # Removes the extra darkness in the background of the settings menu deeper levels and fixes the too bright top bar.
   uix-config-yaml: |
     .: |
       ha-config-apps > * {
         background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-cloud > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-integrations > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-areas > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-voice-assistants > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-person > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
       }
     "* $": |
       ha-config-section {
@@ -332,6 +366,8 @@ Your Name. - Kataware-doki (UIX):
       }
       hass-tabs-subpage, hass-subpage {
         background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
       }
       ha-sidebar {
         background-color: unset !important;
@@ -546,7 +582,7 @@ Your Name. - Tiamat (UIX):
 
   # ── 19. Modern HA Color API ───────────────────────────────────
   # Blue-mapped equivalents of all ha-color-* / wa-color-* tokens
-  ha-color-neutral-95: "#040C1A"
+  # ha-color-neutral-95: "#040C1A"
   wa-color-surface-default: "#07101E"
   ha-color-fill-primary-quiet-resting: "rgba(59, 188, 255, 0.14)"
   ha-color-fill-primary-quiet-hover: "rgba(59, 188, 255, 0.24)"
@@ -650,7 +686,7 @@ Your Name. - Tiamat (UIX):
 
   # ── X. UIX Tinkering ──────────────────────────────────────────
 
-  # Fixes text solor of selection context menus and the darker cards inside settings menu.
+  # Fixes text color of selection context menus and the darker cards inside settings menu.
   uix-top-app-bar-fixed: |
     ::slotted(.content) {
       background: var(--ha-card-background) !important;
@@ -659,7 +695,14 @@ Your Name. - Tiamat (UIX):
     ::slotted(ha-config-section) {
       --card-background-color: transparent !important;
     }
-
+    :host {
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+    }
+  # Fix for too bright top bar in Developer Tools
+  uix-developer-tools: |
+    :host {
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+    }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
     paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
@@ -668,11 +711,38 @@ Your Name. - Tiamat (UIX):
     :host {
       --sidebar-background-color: transparent !important;
     }
-  # Removes the extra darkness in the background of the settings menu deeper levels.
+  # Removes the extra darkness in the background of the settings menu deeper levels and fixes the too bright top bar.
   uix-config-yaml: |
     .: |
       ha-config-apps > * {
         background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-cloud > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-integrations > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-areas > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-voice-assistants > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+      }
+      ha-config-person > * {
+        background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
       }
     "* $": |
       ha-config-section {
@@ -680,6 +750,8 @@ Your Name. - Tiamat (UIX):
       }
       hass-tabs-subpage, hass-subpage {
         background-color: unset !important;
+        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
       }
       ha-sidebar {
         background-color: unset !important;
