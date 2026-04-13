@@ -92,7 +92,7 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
   ```
       styles: |
       ha-card {
-        --bubble-main-background-color: rgba(0, 0, 0, 0.5) !important;
+        --ha-card-background: rgba(0, 0, 0, 0.5) !important;
       }
   ```
   ```
@@ -107,7 +107,7 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
   ```
       styles: |
       ha-card {
-        --bubble-main-background-color: rgba(16, 12, 42, 0.50) !important;
+        --ha-card-background: rgba(16, 12, 42, 0.50) !important;
       }
   ```
   ```
@@ -122,7 +122,7 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
   ```
       styles: |
       ha-card {
-        --bubble-main-background-color: rgba(8, 20, 44, 0.52) !important;
+        --ha-card-background: rgba(8, 20, 44, 0.52) !important;
       }
   ```
   ```
