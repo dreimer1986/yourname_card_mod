@@ -1,5 +1,14 @@
 # Your Name. - UIX & Animated Background Edition.
-Home Assistant theme - A dark, electric blue theme that reminds (me) of the movie Your Name.
+Home Assistant theme inspired by Makoto Shinkai's 2016 film 君の名は。
+
+Two dark variants, both built around frosted glass cards, a blurred background, and a shared amber accent that ties them together.
+
+**Kataware-doki** — named after the split-twilight moment in the film. Deep indigo backgrounds, lavender as the primary colour, comet amber for active states. Warm and atmospheric.
+
+**Tiamat** — named after the comet itself. Same structure, but the lavender is replaced with electric blue against a deep navy sky. Colder, more precise, still unmistakably the same world.
+
+---
+
 WARNING! UIX custom add-in is strongly recommended!
 
 * [Prerequisite](#prerequisite)
@@ -8,11 +17,12 @@ WARNING! UIX custom add-in is strongly recommended!
 * [Activate transparent Sidebar and animated background support](#activate_transparent_sidebar)
 * [Activate animated Backgrounds](#activate_animations)
 * [Enable the theme](#enable_the_theme)
+* [Fonts](#fonts)
 * [Bug](#bug)
 * [Screenshots](#screenshots)
 
 ### <a name="prerequisite"></a>Prerequisite
-Check if **configuration.yaml** allows themes loading from themes folder:   
+Check if **configuration.yaml** allows themes loading from themes folder:
 
 <pre>
 frontend:
@@ -59,7 +69,22 @@ Create the `animated_backgrounds` folder inside `www/` and copy the MP4 files yo
 Open your styles.js and be sure that under filesRandom all your filenames are in the list. Be 100% sure to keep the format. ['file1.mp4', 'file2.mp4', 'file3.mp4']
 
 ### <a name="enable_the_theme"></a>Enable the theme
-- Open your **Profile** in Home Assistant and select the theme called **yourname_uix**
+- Open your **Profile** in Home Assistant and select either **Your Name. - Kataware-doki** or **Your Name. - Tiamat**.
+
+## <a name="fonts"></a>Fonts
+The two themes use different fonts to match their mood. **Kataware-doki** uses Plus Jakarta Sans (warm, humanist) and **Tiamat** uses Sora (precise, quietly technical). Both fall back to system fonts if nothing is loaded.
+
+To actually render them, add the following URL as a Lovelace resource:
+
+**Settings → Dashboards → three-dot menu → Resources → Add Resource**
+
+```
+https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Figtree:ital,wght@0,300;0,400;0,500;1,400&family=Sora:wght@300;400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap
+```
+
+Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your browser after (`Ctrl+Shift+R` / `Cmd+Shift+R`) if the font doesn't appear immediately.
+
+> This requires your Home Assistant instance to have internet access. If you run fully offline the themes fall back to your system font automatically.
 
 ### <a name="bug"></a>Bug (?)
 - Transparency set for cards can have an undesired effect on other Home Assistant resources. I haven't found a 100% fix for these minimal flaws.
