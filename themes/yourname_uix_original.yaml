@@ -117,12 +117,12 @@ Your Name. (UIX):
       --card-background-color: transparent !important;
     }
     :host {
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
     }
   # Fix for too bright top bar in Developer Tools
   uix-developer-tools: |
     :host {
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
     }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
@@ -137,33 +137,33 @@ Your Name. (UIX):
     .: |
       ha-config-apps > * {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
       ha-config-cloud > * {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
       ha-config-integrations > * {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
       ha-config-areas > * {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
       ha-config-voice-assistants > * {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
       ha-config-person > * {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
     "* $": |
       ha-config-section {
@@ -171,8 +171,8 @@ Your Name. (UIX):
       }
       hass-tabs-subpage, hass-subpage {
         background-color: unset !important;
-        --app-header-background-color: rgba(7, 8, 22, 0.64) !important;
-        --sidebar-background-color: rgba(7, 8, 22, 0.64) !important;
+        --app-header-background-color: rgba(20, 26, 50, 0.5) !important;
+        --sidebar-background-color: rgba(20, 26, 50, 0.5) !important;
       }
       ha-sidebar {
         background-color: unset !important;
