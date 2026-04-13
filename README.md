@@ -87,9 +87,53 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
 > This requires your Home Assistant instance to have internet access. If you run fully offline the themes fall back to your system font automatically.
 
 ### <a name="bug"></a>Bug (?)
-- Transparency set for cards can have an undesired effect on other Home Assistant resources. I haven't found a 100% fix for these minimal flaws.
+- Transparency can be a problem with some custom cards. Sometimes one of these added to the card in RAW Editor can fix things:
+  - For Original 
+  ```
+      styles: |
+      ha-card {
+        --bubble-main-background-color: rgba(0, 0, 0, 0.5) !important;
+      }
+  ```
+  ```
+     uix:
+     style: |
+       ha-card {
+         --ha-card-background: rgba(0, 0, 0, 0.5) !important;
+       }
+  ```
+  
+  - For Kataware-doki
+  ```
+      styles: |
+      ha-card {
+        --bubble-main-background-color: rgba(16, 12, 42, 0.50) !important;
+      }
+  ```
+  ```
+     uix:
+     style: |
+       ha-card {
+         --ha-card-background: rgba(16, 12, 42, 0.50) !important;
+       }
+  ```
+  
+  - For Tiamat
+  ```
+      styles: |
+      ha-card {
+        --bubble-main-background-color: rgba(8, 20, 44, 0.52) !important;
+      }
+  ```
+  ```
+     uix:
+     style: |
+       ha-card {
+         --ha-card-background: rgba(8, 20, 44, 0.52) !important;
+       }
+  ```
 
-- The needed CSS cannot be installed by HACS. Same goes for the Animation activation JS Script! These parts have to be done when using HACS or doing things manually, if you want the transparent Sidebar and animated backgrounds.
+- The needed JS Script file cannot be installed by HACS! These parts have to be done when using HACS or doing things manually, if you want the animated backgrounds.
 
 - The JS Script has some nice other features, too. I tried to get the most important stuff from Villhelm's (RIP) Animated background working. More information and how to use it on your own themes will slowly grow up here: https://github.com/dreimer1986/yourname_uix/blob/master/README-script.md
 
