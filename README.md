@@ -142,30 +142,45 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
 
 **Kataware-doki**
 <p align="center">
-  <img src="./assets/kataware-doki-home-overview.webp" alt="Home overview">
+  <img src="./assets/kataware-doki-home-overview.webp" alt="Kataware-doki - Home overview">
 </p>
 
 **Tiamat**
 <p align="center">
-  <img src="./assets/tiamat-home-overview.webp" alt="Home overview">
+  <img src="./assets/tiamat-home-overview.webp" alt="Tiamat - Home overview">
+</p>
+
+**Original**
+<p align="center">
+  <img src="./assets/original-home-overview.webp" alt="Original - Home overview">
 </p>
 
 **Kataware-doki - Settings - About**
 <p align="center">
-  <img src="./assets/kataware-doki-settings-about.webp" alt="Settings - About">
+  <img src="./assets/kataware-doki-settings-about.webp" alt="Kataware-doki - Settings - About">
 </p>
 
 **Tiamat - Settings - About**
 <p align="center">
-  <img src="./assets/tiamat-settings-about.webp" alt="Settings - About">
+  <img src="./assets/tiamat-settings-about.webp" alt="Tiamat - Settings - About">
+</p>
+
+**Original - Settings - About**
+<p align="center">
+  <img src="./assets/original-settings-about.webp" alt="Original - Settings - About">
 </p>
 
 **Kataware-doki - Mobile**
 <p align="center">
-  <img src="./assets/kataware-doki-mobile.webp" alt="Mobile version" width="50%">
+  <img src="./assets/kataware-doki-mobile.webp" alt="Kataware-doki - Mobile version" width="50%">
 </p>
 
 **Tiamat - Mobile**
 <p align="center">
-  <img src="./assets/tiamat-mobile.webp" alt="Mobile version" width="50%">
+  <img src="./assets/tiamat-mobile.webp" alt="Tiamat - Mobile version" width="50%">
+</p>
+
+**Original - Mobile**
+<p align="center">
+  <img src="./assets/original-mobile.webp" alt="Original - Mobile version" width="50%">
 </p>
