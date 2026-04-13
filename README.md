@@ -93,23 +93,35 @@ Set the resource type to **Stylesheet**. No restart needed. Hard-refresh your br
 
 - The JS Script has some nice other features, too. I tried to get the most important stuff from Villhelm's (RIP) Animated background working. More information and how to use it on your own themes will slowly grow up here: https://github.com/dreimer1986/yourname_uix/blob/master/README-script.md
 
-### <a name="screenshots"></a>Screenshots
-**Home overview**
+## <a name="screenshots"></a>Screenshots
+
+
+**Kataware-doki**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/animation.webp">
+  <img src="./assets/kataware-doki-home-overview.webm" alt="Home overview">
 </p>
 
-**Dropdown menu black**
+**Tiamat**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/dropdown.webp">
+  <img src="./assets/tiamat-home-overview.webm" alt="Home overview">
 </p>
 
-**Table**
+**Kataware-doki - Settings - About**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/table.webp">
+  <img src="./assets/kataware-doki-settings-about.webm" alt="Settings - About">
 </p>
 
-**Mobile**
+**Tiamat - Settings - About**
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dreimer1986/yourname_uix/master/images/mobile.webp">
+  <img src="./assets/tiamat-settings-about.webm" alt="Settings - About">
+</p>
+
+**Kataware-doki - Mobile**
+<p align="center">
+  <img src="./assets/kataware-doki-mobile.webm" alt="Mobile version" width="50%">
+</p>
+
+**Tiamat - Mobile**
+<p align="center">
+  <img src="./assets/tiamat-mobile.webm" alt="Mobile version" width="50%">
 </p>
