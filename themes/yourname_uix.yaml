@@ -343,7 +343,7 @@ Your Name. - Kataware-doki (UIX):
       }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
-    paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
+    paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item, ha-list-item-button {
       background: var(--ha-card-background) !important;
     }
     :host {
@@ -749,7 +749,7 @@ Your Name. - Tiamat (UIX):
       }
   # Renders the sidebar with more transparency to allow the effect of singlebuttons instead of one big line of color with text in it.
   uix-sidebar: |
-    paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item {
+    paper-icon-item[role=option], paper-icon-item[aria-role=option], ha-md-list-item, ha-list-item-button {
       background: var(--ha-card-background) !important;
     }
     :host {
