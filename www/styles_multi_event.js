@@ -1,12 +1,11 @@
 console.info(
-    '%c  ANIMATED-BACKGROUNDS  %c  version 1.0  %c  by dreimer1986  ',
-    'color: orange; font-weight: bold; background: black',
-    'color: white; font-weight: bold; background: dimgray',
-    'color: white; font-weight: bold; background: rgb(71, 170, 238)',
+    '%c  ANIMATED-BACKGROUNDS  %c  version 1.1  %c  by dreimer1986 (Optimized) ',
+             'color: orange; font-weight: bold; background: black',
+             'color: white; font-weight: bold; background: dimgray',
+             'color: white; font-weight: bold; background: rgb(71, 170, 238)',
 );
 
 // Stuff you must set up for your own setup
-const token_ = "YOURAPIKEY";
 const weatherEntity_ = "weather.forecast_home";
 const videoPath_ = "/local/animated_backgrounds";
 // const videoPath_ = "https://cdn.flixel.com/flixel"; // Warning!! Below change the video.type back to "video/mp4"
@@ -46,50 +45,51 @@ const wallboxPage = ['ch1.webm', 'ch2.webm'];
 const devtoolsPage = ['16500-273202599.webm'];
 const settingsPage = ['136511-764417302.webm', '9846-221477041.webm', '32742-393990266.webm', '55389-500762756.webm', '16189-269541588.webm'];
 
-// HERE is the magic happening, you don't have to change anything here. (Unless you want to :P)
+let _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
+let _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
+let _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
+let _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
+let eventPage = false;
+let weather_ = "unknown";
 
-// alert(navigator.userAgent);
-// console.log(navigator.userAgent);
+// Create video element safely
+const video = document.createElement('video');
+video.id = "myAnimatedBackground";
+video.loop = true;
+video.muted = true;
+video.playsInline = true;
+video.type = "video/webm";
 
-var _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
-var _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
-var _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
-var _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
-var eventPage = false;
-
-// Get entity state off HA for some tinkerin'
-async function callWebApi() {
-    const headers = new Headers({Authorization: "Bearer " + token_});
-    const result = await fetch(window.location.origin+"/api/states/"+weatherEntity_, {method: "GET", headers: headers});
-    return result.json();
+// --- GANZ WICHTIG: Wetter direkt aus dem Frontend laden, kein API Token nötig! ---
+function getWeatherState() {
+    const ha = document.querySelector('home-assistant');
+    if (ha && ha.hass && ha.hass.states[weatherEntity_]) {
+        return ha.hass.states[weatherEntity_].state;
+    }
+    return "unknown"; // Fallback, falls HA noch nicht ganz geladen ist
 }
 
-var weather_ = (await callWebApi()).state;
-// console.log(weather_);
-
-// Create video element
-const video = document.createElement('video');
-
-// Which file list will it be? Do you want to play the videos or only show one frame?
+// Which file list will it be?
 function giveRightFiles() {
-    if (weatherControl_ == true) {
+    if (weatherControl_ === true) {
         video.autoplay = true;
         eventPage = false;
-        if (weather_ == "clear-night") return filesClearnight;
-        else if (weather_ == "cloudy") return filesCloudy;
-        else if (weather_ == "fog") return filesFog;
-        else if (weather_ == "hail") return filesHail;
-        else if (weather_ == "lightning") return filesLightning;
-        else if (weather_ == "lightning-rainy") return filesLightningRainy;
-        else if (weather_ == "partlycloudy") return filesPartlyCloudy;
-        else if (weather_ == "pouring") return filesPouring;
-        else if (weather_ == "rainy") return filesRainy;
-        else if (weather_ == "snowy") return filesSnowy;
-        else if (weather_ == "snowy-rainy") return filesSnowyRainy;
-        else if (weather_ == "sunny") return filesSunny;
-        else if (weather_ == "windy") return filesWindy;
-        else if (weather_ == "windy-variant") return filesWindyVariant;
-        else if (weather_ == "exceptional") return filesExceptional;
+        if (weather_ === "clear-night") return filesClearnight;
+        else if (weather_ === "cloudy") return filesCloudy;
+        else if (weather_ === "fog") return filesFog;
+        else if (weather_ === "hail") return filesHail;
+        else if (weather_ === "lightning") return filesLightning;
+        else if (weather_ === "lightning-rainy") return filesLightningRainy;
+        else if (weather_ === "partlycloudy") return filesPartlyCloudy;
+        else if (weather_ === "pouring") return filesPouring;
+        else if (weather_ === "rainy") return filesRainy;
+        else if (weather_ === "snowy") return filesSnowy;
+        else if (weather_ === "snowy-rainy") return filesSnowyRainy;
+        else if (weather_ === "sunny") return filesSunny;
+        else if (weather_ === "windy") return filesWindy;
+        else if (weather_ === "windy-variant") return filesWindyVariant;
+        else if (weather_ === "exceptional") return filesExceptional;
+        else return filesRandom;
     } else if (window.location.pathname.includes(_CamPageName)) {
         video.autoplay = false;
         eventPage = true;
@@ -113,68 +113,87 @@ function giveRightFiles() {
     }
 }
 
-var fileList_ = giveRightFiles();
-// console.log(fileList_);
+// Update-Funktion ausgelagert
+function updateVideoSource() {
+    weather_ = getWeatherState();
+    const fileList_ = giveRightFiles();
+    const i = Math.floor(Math.random() * fileList_.length);
 
-// Randomizer
-const i = Math.floor(Math.random()*fileList_.length);
+    // Verhindert Flackern, falls das Video gleich bleibt
+    const newSrc = videoPath_ + "/" + fileList_[i];
+    if (!video.src.endsWith(newSrc)) {
+        video.src = newSrc;
+    }
 
-// Configure video element
-if ((navigator.userAgent).includes(slowDeviceUserAgent) || (lowPowerMode == true && eventPage == true)) {
-    video.autoplay = false;
-} else {
-    video.autoplay = true;
+    if ((navigator.userAgent).includes(slowDeviceUserAgent) || (lowPowerMode === true && eventPage === true)) {
+        video.autoplay = false;
+        video.pause();
+    } else {
+        video.autoplay = true;
+        video.play().catch(e => console.warn("Background Video Autoplay blocked:", e));
+    }
 }
-video.id = "myVideo";
-video.loop = true;
-video.muted = true;
-video.playsInline = true;
-video.src = videoPath_+"/"+fileList_[i];
-// video.type = "video/mp4";
-video.type = "video/webm";
 
-// Insert video background
-document.querySelector("body").insertBefore(video, document.querySelector("body").firstChild);
+// Sichere Initialisierung
+function init() {
+    updateVideoSource();
+    // Video ganz unten in den Body einhängen
+    document.body.insertBefore(video, document.body.firstChild);
 
-// After a specific time has passed, change the video. Check the weather sensor, too.
-async function videoUpdateXSec() {
-    weather_ = (await callWebApi()).state;
-    fileList_ = giveRightFiles();
-    const i = Math.floor(Math.random()*fileList_.length);
-    video.src = videoPath_+"/"+fileList_[i];
-    _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
-    _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
-    _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
-    _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
-}
-setInterval(videoUpdateXSec, videoSwitchPeriod_*1000);
-
-// Add delay for sidebar transparency
-const delay = ms => new Promise(res => setTimeout(res, ms));
-
-// Event handler (extended)
-window.setInterval(function() {
-    if (window.location.pathname.includes(_WallboxPageName) != _WallboxPageNameBefore || window.location.pathname.includes(_CamPageName) != _CamPageNameBefore || window.location.pathname.includes(_DevToolsPageName) != _DevToolsPageNameBefore || window.location.pathname.includes(_SettingsPageName) != _SettingsPageNameBefore) {
-        // console.log("Page Event triggered");
-        if (lowPowerMode == true && eventPage == true) {
-            video.autoplay = false;
-        } else {
-            video.autoplay = true;
-        }
-        videoUpdateXSec();
+    // Timer für Video-Wechsel
+    setInterval(() => {
+        updateVideoSource();
         _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
         _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
         _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
         _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
+    }, videoSwitchPeriod_ * 1000);
+
+    // Event handler für Seitenwechsel
+    window.setInterval(function() {
+        if (
+            window.location.pathname.includes(_WallboxPageName) !== _WallboxPageNameBefore ||
+            window.location.pathname.includes(_CamPageName) !== _CamPageNameBefore ||
+            window.location.pathname.includes(_DevToolsPageName) !== _DevToolsPageNameBefore ||
+            window.location.pathname.includes(_SettingsPageName) !== _SettingsPageNameBefore
+        ) {
+            updateVideoSource();
+            _WallboxPageNameBefore = window.location.pathname.includes(_WallboxPageName);
+            _CamPageNameBefore = window.location.pathname.includes(_CamPageName);
+            _DevToolsPageNameBefore = window.location.pathname.includes(_DevToolsPageName);
+            _SettingsPageNameBefore = window.location.pathname.includes(_SettingsPageName);
+        }
+    }, 1000);
+
+    // Sichere CSS Injektion per Array-Spread
+    const sheet = new CSSStyleSheet();
+    // Wichtig: z-index: -1 und pointer-events: none hinzugefügt
+    sheet.replaceSync(`
+    #myAnimatedBackground {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
     }
-}, 1000);
+    .content {
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+    }
+    `);
+    document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+}
 
-// Inject our previously external .css file with the help of JS. That way it can be applied in configration.yaml to the frontend, too.
-// It's most likely way too much, but inject it to ShadowBOM and main body.
-const sheet = new CSSStyleSheet();
-sheet.replaceSync('#myVideo { position: fixed; right: 0; bottom: 0; width: 100vw; height: 100vh; object-fit: cover; } .content { position: fixed; bottom: 0; background: rgba(0, 0, 0, 0.5); color: #f1f1f1; width: 100%; padding: 20px; } #myBtn { width: 200px; font-size: 18px; padding: 10px; border: none; background: #000; color: #fff; cursor: pointer; } #myBtn:hover { background: #ddd; color: black; }');
-document.adoptedStyleSheets.push(sheet);
-const node = document.createElement("div");
-const shadow = node.attachShadow({ mode: "open" });
-shadow.adoptedStyleSheets = [sheet];
-
+// Ausführen, wenn das Skript geladen wird
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+} else {
+    init();
+}
